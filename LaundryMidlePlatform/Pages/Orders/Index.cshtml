@@ -1,0 +1,67 @@
+﻿@page
+@model LaundryMidlePlatform.Pages.Orders.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/_ViewImports.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].StartDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].FinishDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].TotalVolume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].OrderStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Store)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Order) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinishDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalVolume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Store.StoreName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.OrderId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.OrderId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.OrderId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

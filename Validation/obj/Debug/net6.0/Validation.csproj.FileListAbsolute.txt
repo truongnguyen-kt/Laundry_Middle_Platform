@@ -1,0 +1,11 @@
+C:\Users\Blues\Desktop\Laundry_Middle_Platform\Validation\bin\Debug\net6.0\Validation.deps.json
+C:\Users\Blues\Desktop\Laundry_Middle_Platform\Validation\bin\Debug\net6.0\Validation.dll
+C:\Users\Blues\Desktop\Laundry_Middle_Platform\Validation\bin\Debug\net6.0\Validation.pdb
+C:\Users\Blues\Desktop\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\Validation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Blues\Desktop\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\Validation.AssemblyInfoInputs.cache
+C:\Users\Blues\Desktop\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\Validation.AssemblyInfo.cs
+C:\Users\Blues\Desktop\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\Validation.csproj.CoreCompileInputs.cache
+C:\Users\Blues\Desktop\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\Validation.dll
+C:\Users\Blues\Desktop\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\refint\Validation.dll
+C:\Users\Blues\Desktop\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\Validation.pdb
+C:\Users\Blues\Desktop\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\ref\Validation.dll
