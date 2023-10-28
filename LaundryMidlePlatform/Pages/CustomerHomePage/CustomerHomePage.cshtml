@@ -1,0 +1,55 @@
+﻿@page
+@model LaundryMidlePlatform.Pages.CustomerHomePage.CustomerHomePageModel
+@{
+}
+<h2>View All Stores</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Store[0].StoreName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Store[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Store[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Store[0].Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Store[0].Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Store)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StoreName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @{
+                        string statusText = (item.Status == true) ? "AVAILABLE" : "UNAVAIABLE";
+                    }
+                    @Html.DisplayFor(modelItem => statusText)
+                </td>
+                <td>
+                    <a asp-page="./MakeAnOrder" asp-route-id="@item.StoreId">Make an Order </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

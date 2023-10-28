@@ -30,8 +30,12 @@ namespace DataAccess
 
         public IList<Order> findAllOrders()
         {
-            var Dbcontext = new LaundryMiddlePlatformContext();
-            return Dbcontext.Orders.ToList();
+            var dbContext = new LaundryMiddlePlatformContext();
+            return dbContext.Orders
+                .Include(o => o.Customer)
+                .Include(o => o.OrderDetails)
+                .Include(o => o.Store)
+                .ToList();
         }
 
         public Order findOrderById(int orderId)
@@ -39,8 +43,12 @@ namespace DataAccess
             Order order = null;
             try
             {
-                var Dbcontext = new LaundryMiddlePlatformContext();
-                order = Dbcontext.Orders.FirstOrDefault(o => o.OrderId == orderId);
+                var dbContext = new LaundryMiddlePlatformContext();
+                order = dbContext.Orders
+                    .Include(o => o.Store)
+                    .Include(o => o.Customer)
+                    .Include(o => o.OrderDetails)
+                    .FirstOrDefault(o => o.OrderId == orderId);
             }
             catch (Exception ex) 
             {
@@ -55,12 +63,17 @@ namespace DataAccess
             bool check = false;
             try
             {
-                oldOrder = findOrderById(orderId);  
+                var dbContext = new LaundryMiddlePlatformContext();
+                oldOrder = dbContext.Orders
+                    .Include(o => o.Customer)  
+                    .Include(o => o.OrderDetails)
+                    .Include(o => o.Store)
+                    .FirstOrDefault(order => order.OrderId == orderId);
                 if(oldOrder != null)
                 {
-                    var Dbcontext = new LaundryMiddlePlatformContext();
-                    Dbcontext.Entry<Order>(order).State = EntityState.Modified;
-                    Dbcontext.SaveChanges();
+                   
+                    dbContext.Entry<Order>(order).State = EntityState.Modified;
+                    dbContext.SaveChanges();
                     check = true;
                 }
             }
@@ -77,12 +90,12 @@ namespace DataAccess
             bool check = false;
             try
             {
-                Order order = findOrderById(orderId);
-                if(order != null)
+                var dbContext = new LaundryMiddlePlatformContext();
+                Order order = dbContext.Orders.FirstOrDefault(o => o.OrderId == orderId);
+                if (order != null)
                 {
-                    var Dbcontext = new LaundryMiddlePlatformContext();
-                    Dbcontext.Orders.Remove(order);
-                    Dbcontext.SaveChanges();
+                    dbContext.Orders.Remove(order);
+                    dbContext.SaveChanges();
                     check = true;
                 }
             }
@@ -98,8 +111,9 @@ namespace DataAccess
             bool check = false;
             try
             {
-                var Dbcontext = new LaundryMiddlePlatformContext();
-                Dbcontext.Orders.Add(order);
+                var dbContext = new LaundryMiddlePlatformContext();
+                dbContext.Orders.Add(order);
+                dbContext.SaveChanges();
                 check = true;
             }
             catch (Exception ex)
