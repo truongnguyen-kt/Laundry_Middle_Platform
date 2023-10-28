@@ -24,6 +24,5 @@ namespace Validation
         {
             return input != null && new EmailAddressAttribute().IsValid(input);
         }
-
     }
 }

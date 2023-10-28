@@ -30,7 +30,10 @@ namespace DataAccess
         public IList<Store> GetAllStores()
         {
             var Dbcontext = new LaundryMiddlePlatformContext();
-            return Dbcontext.Stores.ToList();
+            return Dbcontext.Stores
+                 .Include(s => s.Orders)
+                 .Include(s => s.WashingMachines)
+                 .ToList();
         }
         public Store GetStoreById(int id)
         {
@@ -38,7 +41,10 @@ namespace DataAccess
             try
             {
                 var Dbcontext = new LaundryMiddlePlatformContext();
-                store = Dbcontext.Stores.FirstOrDefault(o => o.StoreId == id);
+                store = Dbcontext.Stores
+                     .Include(s => s.Orders)
+                     .Include(s => s.WashingMachines)
+                     .FirstOrDefault(o => o.StoreId == id);
             }
             catch (Exception ex)
             {
