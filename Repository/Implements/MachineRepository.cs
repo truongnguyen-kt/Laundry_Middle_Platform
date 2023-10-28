@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Implements
 {
-    public class MachineRepository
+    public class MachineRepository : IMachineRepository
     {
         public IList<WashingMachine> GetWashingMachines() => MachineDAO.Instance.GetWashingMachines();
         public bool AddWashingMachine(WashingMachine washingMachine) => MachineDAO.Instance.AddWashingMachine(washingMachine);
