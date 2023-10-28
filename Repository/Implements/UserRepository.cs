@@ -40,5 +40,12 @@ namespace Repository.Implement
         {           
             UserDAO.Instance.UpdateUser(user);
         }
+
+        public User GetCustomerByEmailAndPassword(string email, string password)
+        {
+            return UserDAO.Instance.GetCustomerByEmailAndPassword(email, password);
+        }
+
+        public User findUserByEmail(string email) => UserDAO.Instance.findUserByEmail(email);
     }
 }
