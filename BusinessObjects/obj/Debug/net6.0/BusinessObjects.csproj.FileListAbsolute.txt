@@ -26,3 +26,17 @@ C:\Users\Blues\Desktop\Laundry_Middle_Platform\BusinessObjects\obj\Debug\net6.0\
 C:\Users\Blues\Desktop\Laundry_Middle_Platform\BusinessObjects\obj\Debug\net6.0\BusinessObjects.pdb
 C:\Users\Blues\Desktop\Laundry_Middle_Platform\BusinessObjects\obj\Debug\net6.0\BusinessObjects.genruntimeconfig.cache
 C:\Users\Blues\Desktop\Laundry_Middle_Platform\BusinessObjects\obj\Debug\net6.0\ref\BusinessObjects.dll
+C:\Users\ASUS\Desktop\LauchDry2\Laundry_Middle_Platform\BusinessObjects\bin\Debug\net6.0\BusinessObjects.deps.json
+C:\Users\ASUS\Desktop\LauchDry2\Laundry_Middle_Platform\BusinessObjects\bin\Debug\net6.0\BusinessObjects.runtimeconfig.json
+C:\Users\ASUS\Desktop\LauchDry2\Laundry_Middle_Platform\BusinessObjects\bin\Debug\net6.0\BusinessObjects.dll
+C:\Users\ASUS\Desktop\LauchDry2\Laundry_Middle_Platform\BusinessObjects\bin\Debug\net6.0\BusinessObjects.pdb
+C:\Users\ASUS\Desktop\LauchDry2\Laundry_Middle_Platform\BusinessObjects\obj\Debug\net6.0\BusinessObjects.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\LauchDry2\Laundry_Middle_Platform\BusinessObjects\obj\Debug\net6.0\BusinessObjects.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Desktop\LauchDry2\Laundry_Middle_Platform\BusinessObjects\obj\Debug\net6.0\BusinessObjects.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\LauchDry2\Laundry_Middle_Platform\BusinessObjects\obj\Debug\net6.0\BusinessObjects.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\LauchDry2\Laundry_Middle_Platform\BusinessObjects\obj\Debug\net6.0\BusinessObjects.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\LauchDry2\Laundry_Middle_Platform\BusinessObjects\obj\Debug\net6.0\BusinessObjects.dll
+C:\Users\ASUS\Desktop\LauchDry2\Laundry_Middle_Platform\BusinessObjects\obj\Debug\net6.0\refint\BusinessObjects.dll
+C:\Users\ASUS\Desktop\LauchDry2\Laundry_Middle_Platform\BusinessObjects\obj\Debug\net6.0\BusinessObjects.pdb
+C:\Users\ASUS\Desktop\LauchDry2\Laundry_Middle_Platform\BusinessObjects\obj\Debug\net6.0\BusinessObjects.genruntimeconfig.cache
+C:\Users\ASUS\Desktop\LauchDry2\Laundry_Middle_Platform\BusinessObjects\obj\Debug\net6.0\ref\BusinessObjects.dll

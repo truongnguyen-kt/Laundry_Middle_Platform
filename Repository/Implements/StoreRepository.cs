@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Implements
 {
-    public class StoreRepository
+    public class StoreRepository : IStoreRepository
     {
         public IList<Store> GetAllStores() => StoreDAO.Instance.GetAllStores();
         public Store GetStoreById(int id) => StoreDAO.Instance.GetStoreById(id);
