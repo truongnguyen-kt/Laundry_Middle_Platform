@@ -53,7 +53,9 @@ namespace DataAccess
 
         public List<User?> GetCustomerByEmail(string Email)
         {
-            return _context.Users.Where(cus => cus.Email.ToUpper().Contains(Email.ToUpper())).ToList();
+            return _context.Users
+                .Where(cus => cus.Email.ToUpper().Contains(Email.ToUpper()))
+                .ToList();
         }
         public User GetCustomerById(int id)
         {
@@ -75,6 +77,19 @@ namespace DataAccess
 
             _context.Update(user);
             _context.SaveChanges();
+        }
+        public User GetCustomerByEmailAndPassword(string email, string password)
+        {
+            return _context.Users
+                .Where(cus => cus.Email.ToUpper().Contains(email.ToUpper()) && cus.Password.Equals(password))
+                .FirstOrDefault();
+        }
+
+        public User findUserByEmail(string email)
+        {
+            return _context.Users
+               .Where(user => user.Email.Equals(email))
+               .FirstOrDefault();
         }
     }
 }

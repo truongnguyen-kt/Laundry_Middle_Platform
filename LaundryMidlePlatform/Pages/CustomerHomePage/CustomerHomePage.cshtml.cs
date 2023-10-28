@@ -23,17 +23,24 @@ namespace LaundryMidlePlatform.Pages.CustomerHomePage
         //    _context = context;
         //}
 
-        private IStoreRepository storeRepository = new StoreRepository();
-
-        public IList<Store> Store { get; set; } = default!;
-
+        public string Email { get; private set; }
         public void OnGetAsync()
         {
             //if (_context.Stores != null)
             //{
             //    Store = await _context.Stores.ToListAsync();
             //}
-            Store = (IList<Store>)storeRepository.GetAllStores();
+            string email = HttpContext.Session.GetString("customerEmail");
+            if (!string.IsNullOrEmpty(email))
+            {
+                Email = email;
+            }
+        }
+
+        public IActionResult OnPost()
+        {
+            HttpContext.Session.Remove("customerEmail");
+            return RedirectToPage("/Index");
         }
     }
 }

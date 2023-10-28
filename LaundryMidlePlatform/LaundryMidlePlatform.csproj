@@ -14,6 +14,8 @@
   <ItemGroup>
     <ProjectReference Include="..\BusinessObjects\BusinessObjects.csproj" />
     <ProjectReference Include="..\Repository\Repository.csproj" />
+	<ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+	<ProjectReference Include="..\Validation\Validation.csproj" />
   </ItemGroup>
 
 </Project>

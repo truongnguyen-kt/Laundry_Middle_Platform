@@ -1,13 +1,21 @@
-using BusinessObjects.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Repository.Implement;
+using Microsoft.EntityFrameworkCore;
+using BusinessObjects.Models;
+using Repository.IRepository;
+using Repository.Implements;
 using Repository.Interface;
+using Microsoft.EntityFrameworkCore.Migrations;
+using Repository.Implement;
 using Validation;
 
 namespace LaundryMidlePlatform.Pages.CustomerHomePage
 {
-    public class viewOrderHistoryCustomerModel : PageModel
+    public class ViewAllStoresModel : PageModel
     {
         private IUserRepository userRepository = new UserRepository();
         private Utils validation = new Utils();
@@ -15,6 +23,9 @@ namespace LaundryMidlePlatform.Pages.CustomerHomePage
 
         [BindProperty]
         public User User { get; set; } = default!;
+
+        private IStoreRepository storeRepository = new StoreRepository();
+        public IList<Store> Store { get; set; } = default!;
         public void OnGet()
         {
             string email = HttpContext.Session.GetString("customerEmail");
@@ -23,6 +34,7 @@ namespace LaundryMidlePlatform.Pages.CustomerHomePage
                 Email = email;
                 User = userRepository.findUserByEmail(Email);
             }
+            Store = (IList<Store>)storeRepository.GetAllStores();
         }
     }
 }

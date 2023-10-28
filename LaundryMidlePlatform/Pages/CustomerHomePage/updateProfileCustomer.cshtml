@@ -1,5 +1,96 @@
 ﻿@page
 @model LaundryMidlePlatform.Pages.CustomerHomePage.updateProfileCustomerModel
-@{
-}
-<h2>Update Customer Profile</h2>
+@{}
+<div class="text-center" style="margin-top: 10px;">
+    <h3>Update Profile @Model.Email</h3>
+</div>
+
+<div class="row justify-content-center" style="margin-top: 20px;">
+    <div class="col-md-6">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="User.UserId" />
+            <div class="form-group row" style="margin: 10px 0;">
+                <label class="col-md-6" asp-for="User.FirstName"></label>
+                <div class="col-md-6">
+                    <input asp-for="User.FirstName" class="form-control" required />
+                    <span asp-validation-for="User.FirstName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row" style="margin: 10px 0;">
+                <label class="col-md-6" asp-for="User.LastName"></label>
+                <div class="col-md-6">
+                    <input asp-for="User.LastName" class="form-control" required  />
+                    <span asp-validation-for="User.LastName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row" style="margin: 10px 0;">
+                <label class="col-md-6" asp-for="User.Phone"></label>
+                <div class="col-md-6">
+                    <input asp-for="User.Phone" class="form-control" required />
+                    <span asp-validation-for="User.Phone" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row" style="margin: 10px 0;">
+                <label class="col-md-6" asp-for="User.Email"></label>
+                <div class="col-md-6">
+                    <input asp-for="User.Email" class="form-control" readonly />
+                    <span asp-validation-for="User.Email" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row" style="margin: 10px 0;">
+                <label class="col-md-6" asp-for="User.DateOfBirth"></label>
+                <div class="col-md-6">
+                    <input asp-for="User.DateOfBirth" class="form-control" required />
+                    <span asp-validation-for="User.DateOfBirth" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row" style="margin: 10px 0;">
+                <label class="col-md-6" asp-for="User.Address"></label>
+                <div class="col-md-6">
+                    <input asp-for="User.Address" class="form-control" required />
+                    <span asp-validation-for="User.Address" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row" style="margin: 10px 0;">
+                <label class="col-md-6" asp-for="User.Gender"></label>
+                <div class="col-md-6">
+                    <select asp-for="User.Gender" class="form-control" required>
+                        <option value=true>Female</option>
+                        <option value=false>Male</option>
+                    </select>
+                    <span asp-validation-for="User.Gender" class="text-danger"></span>
+                </div>
+            </div>
+
+            <input type="hidden" asp-for="User.Gender" />
+
+            <input type="hidden" asp-for="User.RoleId" />
+            <div class="form-group row" style="margin: 10px 0;">
+                <label class="col-md-6" asp-for="User.Password"></label>
+                <div class="col-md-6">
+                    <input asp-for="User.Password" class="form-control" required />
+                    <span asp-validation-for="User.Password" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="text-center" style="margin: 25px 0;">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+        @if (!string.IsNullOrEmpty(Model.Error))
+        {
+            <p class="text-center" style="margin: 12px 0;">
+                <span style="color:red;">Error: @Model.Error</span>
+            </p>
+        }
+        @if (!string.IsNullOrEmpty(Model.Success))
+        {
+            <p class="text-center" style="margin: 12px 0;">
+                <span style="color:green;"> @Model.Success</span>
+            </p>
+        }
+    </div>
+</div>
+<div class="text-center" style="margin-top: 15px;">
+    <a asp-page="/CustomerHomePage/CustomerHomePage" asp-route-email="@Model.Email" style="font-size: 16px;">Back to Customer Home Page</a>
+</div>
