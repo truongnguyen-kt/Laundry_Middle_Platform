@@ -45,8 +45,8 @@ namespace DataAccess
         }
         public void AddUser(User user)
         {
-            var maxId = _context.Users.Max(c => c.UserId);
-            user.UserId = maxId + 1;
+            /*var maxId = _context.Users.Max(c => c.UserId);
+            user.UserId = maxId + 1;*/
             _context.Users.Add(user);
             _context.SaveChanges();
         }
