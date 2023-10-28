@@ -21,7 +21,7 @@ namespace Repository.Interface
         public void AddNewCustomer(User newCustomer);
 
         public List<User> GetUserByEmail(string email);
-        public List<User> GetCustomerByEmailAndPassword(string email, string password);
+        public User GetCustomerByEmailAndPassword(string email, string password);
 
     }
 }

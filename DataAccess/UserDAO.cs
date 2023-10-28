@@ -77,9 +77,9 @@ namespace DataAccess
             _context.SaveChanges();
         }
 
-        public List<User?> GetCustomerByEmailAndPassword(string email, string password)
+        public User GetCustomerByEmailAndPassword(string email, string password)
         {
-            return _context.Users.Where(cus => cus.Email.ToUpper().Contains(email.ToUpper()) && cus.Password.Equals(password)).ToList();
+            return _context.Users.Where(cus => cus.Email.ToUpper().Contains(email.ToUpper()) && cus.Password.Equals(password)).FirstOrDefault();
         }
     }
 

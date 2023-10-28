@@ -3,7 +3,7 @@ using System.Net;
 
 namespace Validation
 {
-    public class Ultils
+    public class Utils
     {
         public bool IsNotEmptyString(string input)
         {
