@@ -26,6 +26,11 @@ namespace Repository.Implement
             return UserDAO.Instance.GetAllUser();
         }
 
+        public List<User> GetCustomerByEmailAndPassword(string email, string password)
+        {
+            return UserDAO.Instance.GetCustomerByEmailAndPassword(email, password);
+        }
+
         public List<User?> GetUserByEmail(string email)
         {
            return UserDAO.Instance.GetCustomerByEmail(email);
