@@ -1,0 +1,67 @@
+﻿@page
+@model LaundryMidlePlatform.Pages.Stores.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Store[0].StoreName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Store[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Store[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Store[0].Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Store[0].Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Store) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StoreName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+                <td>
+                    @if (item.Status == true)
+                    {
+                        <text>Đang hoạt động</text>
+                    }
+                    else if (item.Status == false)
+                    {
+                        <text>Dịch vụ hỏng</text>
+                    }
+                </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.StoreId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.StoreId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.StoreId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

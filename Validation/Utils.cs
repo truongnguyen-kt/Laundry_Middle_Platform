@@ -1,22 +1,28 @@
-﻿namespace Validation
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Validation
 {
-    public static class Utils
-    {   
-        public static bool IsInt(string input)
+    public class Utils
+    {
+        public bool IsInt(string input)
         {
             return int.TryParse(input, out _);
         }
-        public static bool IsDecimal(string input)
+        public bool IsDecimal(string input)
         {
             return decimal.TryParse(input, out _);
         }
-        public static bool IsDouble(string input)
+        public bool IsDouble(string input)
         {
             return double.TryParse(input, out _);
         }
-        public static bool IsNotEmptyString(string input)
+        public bool IsNotEmptyString(string input)
         {
             return !String.IsNullOrEmpty(input);
+        }
+        public bool IsEmail(string input)
+        {
+            return input != null && new EmailAddressAttribute().IsValid(input);
         }
     }
 }
