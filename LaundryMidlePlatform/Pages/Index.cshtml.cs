@@ -8,7 +8,7 @@ namespace LaundryMidlePlatform.Pages
 {
     public class IndexModel : PageModel
     {
-        private Ultils validation = new Ultils();
+        private Utils validation = new Utils();
         private readonly ILogger<IndexModel> _logger;
         private IUserRepository _user = new UserRepository();
 
@@ -42,9 +42,11 @@ namespace LaundryMidlePlatform.Pages
             }
             var user = _user.GetCustomerByEmailAndPassword(Email.Trim(), Password);
 
-            if (user.Count > 0)
+            if (user != null)
             {
-                return RedirectToPage("/OptionsPage/CustomerPage");
+                if (user.RoleId == 2) return RedirectToPage("/guest");
+                if (user.RoleId == 3) return RedirectToPage("/store");
+                return RedirectToPage("/admin");
             }
             else
             {  
