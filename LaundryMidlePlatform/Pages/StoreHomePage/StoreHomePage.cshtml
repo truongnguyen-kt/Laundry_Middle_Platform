@@ -1,0 +1,49 @@
+﻿@page
+@model LaundryMidlePlatform.Pages.StoreHomePage.StoreHomePage
+@{
+}
+<h2>View All Orders</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].StartDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].FinishDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].TotalVolume)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].OrderStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].Customer.Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Orders)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FinishDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalVolume)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.Email)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

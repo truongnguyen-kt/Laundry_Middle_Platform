@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6RZWgbYqaL5FVto5HNNIc2FyBwR/SYfVDj/FYywdY+fJ7yPQHullNrzOrfoCM5RtYGi2NO6YCDsPEipevPqw4g==",
+  "dgSpecHash": "IvWXbrzYEbtafClWH518Jbxm2zJfJmrtlHmJY6MY1jDecqMxiLMzXUj5pVOhXkvvsSfzGwf0UUQ6167YvwODWQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Blues\\Desktop\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj",
+  "projectFilePath": "C:\\Users\\Blues\\Desktop\\Laundry_Middle_Platform\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Blues\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Blues\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

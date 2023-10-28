@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "diPH0BzUSYvnsK6cmghJ+9+NuEroUJOyyANMP6vnu3Kn6vF0lV6oTGPk5LeiqnUXrnkSeiWnBdINildTBf2xUQ==",
+  "dgSpecHash": "jhRqQ3QyC1hueJBnjn6jfQQnNI8qjsS+ut2bKSJvkxMwLvk0bPKUjD1ZxGo+YvV+O1iy6jc1WoW+V1nBpyFnKg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Blues\\Desktop\\Laundry_Middle_Platform\\Repository\\Repository.csproj",
+  "projectFilePath": "C:\\Users\\Blues\\Desktop\\Laundry_Middle_Platform\\Laundry_Middle_Platform\\Repository\\Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Blues\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Blues\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

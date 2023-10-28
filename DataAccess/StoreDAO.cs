@@ -35,6 +35,16 @@ namespace DataAccess
                  .Include(s => s.WashingMachines)
                  .ToList();
         }
+
+        public IList<Store> GetAllStoresID()
+        {
+            var Dbcontext = new LaundryMiddlePlatformContext();
+            var storesWithMachines = Dbcontext.Stores
+            .Include(s => s.WashingMachines) // Use a simple property access
+            .ToList();
+            return storesWithMachines;
+        }
+
         public Store GetStoreById(int id)
         {
             Store store = null;

@@ -14,5 +14,6 @@ namespace Repository.IRepository
         public bool AddStore(Store store);
         public bool DeleteStore(int storeId);
         public bool UpdateStore(Store store, int storeId);
+        public IList<Store> GetAllStoreID();
     }
 }

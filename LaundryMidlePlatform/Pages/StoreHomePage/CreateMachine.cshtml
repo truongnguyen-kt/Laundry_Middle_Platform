@@ -1,0 +1,49 @@
+﻿@page
+@model LaundryMidlePlatform.Pages.StoreHomePage.CreateMachine
+
+@{
+    ViewData["Title"] = "CreateMachine";
+}
+
+<h1>Create</h1>
+
+<h4>Machine</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Machine.MachineName" class="control-label"></label>
+                <input asp-for="Machine.MachineName" class="form-control" />
+                <span asp-validation-for="Machine.MachineName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Machine.Performmance" class="control-label"></label>
+                <input asp-for="Machine.Performmance" class="form-control" />
+                <span asp-validation-for="Machine.Performmance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Machine.Status" class="control-label"></label>
+                <input asp-for="Machine.Status" class="form-control" />
+                <span asp-validation-for="Machine.Status" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Machine.StoreId" class="control-label"></label>
+                <select asp-for="Machine.StoreId" class="form-control" asp-items="ViewBag.StoreId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-page="StoreHomePage">Back to List</a>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

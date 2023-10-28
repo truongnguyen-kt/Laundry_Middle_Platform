@@ -17,5 +17,6 @@ namespace Repository.Implements
         public bool DeleteStore(int storeId) => StoreDAO.Instance.DeleteStore(storeId);
         public bool UpdateStore(Store store, int storeId) => StoreDAO.Instance.UpdateStore(store, storeId);
 
+        public IList<Store> GetAllStoreID() => StoreDAO.Instance.GetAllStoresID();
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Blues\\Desktop\\Laundry_Middle_Platform\\Validation\\Validation.csproj": {}
+    "C:\\Users\\Blues\\Desktop\\Laundry_Middle_Platform\\Laundry_Middle_Platform\\Validation\\Validation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Blues\\Desktop\\Laundry_Middle_Platform\\Validation\\Validation.csproj": {
+    "C:\\Users\\Blues\\Desktop\\Laundry_Middle_Platform\\Laundry_Middle_Platform\\Validation\\Validation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Blues\\Desktop\\Laundry_Middle_Platform\\Validation\\Validation.csproj",
+        "projectUniqueName": "C:\\Users\\Blues\\Desktop\\Laundry_Middle_Platform\\Laundry_Middle_Platform\\Validation\\Validation.csproj",
         "projectName": "Validation",
-        "projectPath": "C:\\Users\\Blues\\Desktop\\Laundry_Middle_Platform\\Validation\\Validation.csproj",
+        "projectPath": "C:\\Users\\Blues\\Desktop\\Laundry_Middle_Platform\\Laundry_Middle_Platform\\Validation\\Validation.csproj",
         "packagesPath": "C:\\Users\\Blues\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Blues\\Desktop\\Laundry_Middle_Platform\\Validation\\obj\\",
+        "outputPath": "C:\\Users\\Blues\\Desktop\\Laundry_Middle_Platform\\Laundry_Middle_Platform\\Validation\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
