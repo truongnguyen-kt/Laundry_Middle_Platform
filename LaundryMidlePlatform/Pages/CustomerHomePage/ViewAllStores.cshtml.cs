@@ -18,6 +18,7 @@ namespace LaundryMidlePlatform.Pages.CustomerHomePage
     public class ViewAllStoresModel : PageModel
     {
         private IUserRepository userRepository = new UserRepository();
+
         private Utils validation = new Utils();
         public string Email { get; private set; }
 
@@ -34,7 +35,7 @@ namespace LaundryMidlePlatform.Pages.CustomerHomePage
                 Email = email;
                 User = userRepository.findUserByEmail(Email);
             }
-            Store = (IList<Store>)storeRepository.GetAllStores();
+            Store = storeRepository.GetAllStores();
         }
     }
 }

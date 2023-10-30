@@ -1,96 +1,159 @@
 ﻿@page
 @model LaundryMidlePlatform.Pages.CustomerHomePage.updateProfileCustomerModel
-@{}
+@{
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/customerProfileStyle.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
 <div class="text-center" style="margin-top: 10px;">
-    <h3>Update Profile @Model.Email</h3>
+    <h3 class="font-weight-bold py-3 mb-4">Account Settings</h3>
 </div>
 
-<div class="row justify-content-center" style="margin-top: 20px;">
-    <div class="col-md-6">
+
+<body>
+    <div class="container light-style flex-grow-1 container-p-y">
+
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="User.UserId" />
-            <div class="form-group row" style="margin: 10px 0;">
-                <label class="col-md-6" asp-for="User.FirstName"></label>
-                <div class="col-md-6">
-                    <input asp-for="User.FirstName" class="form-control" required />
-                    <span asp-validation-for="User.FirstName" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-group row" style="margin: 10px 0;">
-                <label class="col-md-6" asp-for="User.LastName"></label>
-                <div class="col-md-6">
-                    <input asp-for="User.LastName" class="form-control" required  />
-                    <span asp-validation-for="User.LastName" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-group row" style="margin: 10px 0;">
-                <label class="col-md-6" asp-for="User.Phone"></label>
-                <div class="col-md-6">
-                    <input asp-for="User.Phone" class="form-control" required />
-                    <span asp-validation-for="User.Phone" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-group row" style="margin: 10px 0;">
-                <label class="col-md-6" asp-for="User.Email"></label>
-                <div class="col-md-6">
-                    <input asp-for="User.Email" class="form-control" readonly />
-                    <span asp-validation-for="User.Email" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-group row" style="margin: 10px 0;">
-                <label class="col-md-6" asp-for="User.DateOfBirth"></label>
-                <div class="col-md-6">
-                    <input asp-for="User.DateOfBirth" class="form-control" required />
-                    <span asp-validation-for="User.DateOfBirth" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-group row" style="margin: 10px 0;">
-                <label class="col-md-6" asp-for="User.Address"></label>
-                <div class="col-md-6">
-                    <input asp-for="User.Address" class="form-control" required />
-                    <span asp-validation-for="User.Address" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-group row" style="margin: 10px 0;">
-                <label class="col-md-6" asp-for="User.Gender"></label>
-                <div class="col-md-6">
-                    <select asp-for="User.Gender" class="form-control" required>
-                        <option value=true>Female</option>
-                        <option value=false>Male</option>
-                    </select>
-                    <span asp-validation-for="User.Gender" class="text-danger"></span>
-                </div>
-            </div>
+            <div class="card overflow-hidden">
+                <div class="row no-gutters row-bordered row-border-light">
+                    <div class="col-md-3 pt-0">
+                        <div class="list-group list-group-flush account-settings-links">
+                            <a class="list-group-item list-group-item-action active" data-toggle="list"
+                               href="#account-general">General</a>
+                            <a class="list-group-item list-group-item-action" data-toggle="list"
+                               href="#account-change-password">Change password</a>
+                            <a class="list-group-item list-group-item-action" data-toggle="list"
+                               href="#account-info">Info</a>
 
-            <input type="hidden" asp-for="User.Gender" />
+                        </div>
+                    </div>
 
-            <input type="hidden" asp-for="User.RoleId" />
-            <div class="form-group row" style="margin: 10px 0;">
-                <label class="col-md-6" asp-for="User.Password"></label>
-                <div class="col-md-6">
-                    <input asp-for="User.Password" class="form-control" required />
-                    <span asp-validation-for="User.Password" class="text-danger"></span>
+
+
+                    <div class="col-md-9">
+                        <div class="tab-content">
+                            <div class="tab-pane fade active show" id="account-general">
+
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label class="col-md-6" asp-for="User.FirstName"></label>
+                                        <div class="">
+                                            <input asp-for="User.FirstName" class="form-control" required />
+                                            <span asp-validation-for="User.FirstName" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-6" asp-for="User.LastName"></label>
+                                        <div class="">
+                                            <input asp-for="User.LastName" class="form-control" required />
+                                            <span asp-validation-for="User.LastName" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-6" asp-for="User.Email"></label>
+                                        <div class="">
+                                            <input asp-for="User.Email" class="form-control" readonly />
+                                            <span asp-validation-for="User.Email" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-6" asp-for="User.Address"></label>
+                                        <div class="">
+                                            <input asp-for="User.Address" class="form-control" required />
+                                            <span asp-validation-for="User.Address" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="account-change-password">
+                                <div class="card-body pb-2">
+                                    <div class="form-group">
+                                        <label class="col-md-6" asp-for="User.Password"></label>
+                                        <div class="">
+                                            <input asp-for="User.Password" class="form-control" required />
+                                            <span asp-validation-for="User.Password" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    @*<div class="form-group">
+                                    <label class="form-label">New password</label>
+                                    <input type="password" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                    <label class="form-label">Repeat new password</label>
+                                    <input type="password" class="form-control">
+                                    </div>*@
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="account-info">
+                                <div class="card-body pb-2">
+
+                                    <div class="form-group">
+                                        <label class="col-md-6" asp-for="User.DateOfBirth"></label>
+                                        <div class="col-md-6">
+                                            <input asp-for="User.DateOfBirth" class="form-control" required />
+                                            <span asp-validation-for="User.DateOfBirth" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-6" asp-for="User.Gender"></label>
+                                        <div class="col-md-6">
+                                            <select asp-for="User.Gender" class="form-control" required>
+                                                <option value=true>Female</option>
+                                                <option value=false>Male</option>
+                                            </select>
+                                            <span asp-validation-for="User.Gender" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="border-light m-0">
+                                <div class="card-body pb-2">
+                                    <h6 class="mb-4">Contacts</h6>
+                                    <div class="form-group">
+                                        <label class="col-md-6" asp-for="User.Phone"></label>
+                                        <div class="col-md-6">
+                                            <input asp-for="User.Phone" class="form-control" required />
+                                            <span asp-validation-for="User.Phone" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    @if (!string.IsNullOrEmpty(Model.Error))
+                    {
+                        <p class="text-center" style="margin: 12px 0;">
+                            <span style="color:red;">Error: @Model.Error</span>
+                        </p>
+                    }
+                    @if (!string.IsNullOrEmpty(Model.Success))
+                    {
+                        <p class="text-center" style="margin: 12px 0;">
+                            <span style="color:green;"> @Model.Success</span>
+                        </p>
+                    }
+
                 </div>
             </div>
-            <div class="text-center" style="margin: 25px 0;">
-                <input type="submit" value="Update" class="btn btn-primary" />
+            <div class="text-right mt-3">
+                <button type="submit" class="btn btn-primary">Save changes</button>&nbsp;
+                <a asp-page="/CustomerHomePage/CustomerHomePage" asp-route-email="@Model.Email" type="button" class="btn btn-default">Cancel</a>
             </div>
         </form>
-        @if (!string.IsNullOrEmpty(Model.Error))
-        {
-            <p class="text-center" style="margin: 12px 0;">
-                <span style="color:red;">Error: @Model.Error</span>
-            </p>
-        }
-        @if (!string.IsNullOrEmpty(Model.Success))
-        {
-            <p class="text-center" style="margin: 12px 0;">
-                <span style="color:green;"> @Model.Success</span>
-            </p>
-        }
+
     </div>
-</div>
-<div class="text-center" style="margin-top: 15px;">
-    <a asp-page="/CustomerHomePage/CustomerHomePage" asp-route-email="@Model.Email" style="font-size: 16px;">Back to Customer Home Page</a>
-</div>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
+</body>

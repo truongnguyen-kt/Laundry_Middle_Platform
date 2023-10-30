@@ -2,57 +2,61 @@
 @model LaundryMidlePlatform.Pages.CustomerHomePage.ViewAllStoresModel
 @{
 }
-<h2>View All Stores</h2>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Store[0].StoreName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Store[0].Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Store[0].Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Store[0].Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Store[0].Status)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Store)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StoreName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Address)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Phone)
-                </td>
-                <td>
-                    @{
-                        string statusText = (item.Status == true) ? "AVAILABLE" : "UNAVAIABLE";
-                    }
-                    @Html.DisplayFor(modelItem => statusText)
-                </td>
-                <td>
-                    <a asp-page="./MakeAnOrder" asp-route-id="@item.StoreId">Make an Order </a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Material Design for Bootstrap</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="~/css/mdb.min.css" />
+</head>
+
+<body>
+    <div class="container py-5">
+        <h1 class="text-center">View All Stores</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+            @foreach (var item in Model.Store)
+            {
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/062.webp" class="card-img-top" alt="Chicago Skyscrapers" />
+                        <div class="card-body">
+                            <h5 class="card-title">@Html.DisplayFor(modelItem => item.StoreName)</h5>
+                            <p class="card-text">Address: @Html.DisplayFor(modelItem => item.Address)</p>
+                        </div>
+                        <ul class="list-group list-group-light list-group-small">
+                            <li class="list-group-item px-4">Price: @Html.DisplayFor(modelItem => item.Price)</li>
+                            <li class="list-group-item px-4">Phone: @Html.DisplayFor(modelItem => item.Phone)</li>
+                            <li class="list-group-item px-4">
+                                Status: @{
+                                    string statusText = (item.Status == true) ? "AVAILABLE" : "UNAVAIABLE";
+                                }
+                                @Html.DisplayFor(modelItem => statusText)
+                            </li>
+                        </ul>
+                        <div class="card-body">
+                            <a asp-page="/Orders/Create" asp-route-id="@item.StoreId">Make an Order </a>
+
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+</body>
 <div class="text-center" style="margin-top: 15px;">
     <a asp-page="/CustomerHomePage/CustomerHomePage" asp-route-email="@Model.Email" style="font-size: 16px;">Back to Customer Home Page</a>
 </div>
