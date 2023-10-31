@@ -72,8 +72,9 @@ namespace LaundryMidlePlatform.Pages.CustomerHomePage
             {
                 userRepository.UpdateUser(User);
                 Success = "Update Customer Successfully";
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Error = "Fail to Update Customer Account";
             }
