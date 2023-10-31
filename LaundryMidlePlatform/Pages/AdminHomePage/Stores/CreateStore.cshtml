@@ -88,13 +88,6 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label asp-for="Store.Status" class="control-label"></label>
-                        <input asp-for="Store.Status" class="form-control" />
-                        <span asp-validation-for="Store.Status" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label asp-for="Store.Status" class="control-label"></label>
                         <select asp-for="Store.Status" class="form-control">
                             <option value="True">Đang hoạt động</option>
                             <option value="False">Dịch vụ hỏng</option>
@@ -104,7 +97,8 @@
                 </div>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary btn-block" />
+                <input type="submit" value="Create" class="btn btn-primary btn-block" style="width: 100%;
+    margin-top: 25px;" />
             </div>
         </form>
     </div>

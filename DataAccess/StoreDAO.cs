@@ -59,7 +59,8 @@ namespace DataAccess
             try
             {
                 var Dbcontext = new LaundryMiddlePlatformContext();
-                Dbcontext.Stores.Add(store);
+                Dbcontext.Stores.Add(store); 
+                Dbcontext.SaveChanges();
                 check = true;
             }
             catch (Exception ex)

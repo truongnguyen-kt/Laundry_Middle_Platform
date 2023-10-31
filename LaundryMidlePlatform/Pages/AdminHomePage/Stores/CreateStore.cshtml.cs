@@ -10,6 +10,7 @@ using DataAccess;
 using Repository.Implements;
 using Repository.IRepository;
 using System.Text.RegularExpressions;
+using Validation;
 
 namespace LaundryMidlePlatform.Pages.Stores
 {
@@ -19,6 +20,7 @@ namespace LaundryMidlePlatform.Pages.Stores
 
         private readonly StoreRepository storeRepository = new StoreRepository();
 
+        private Utils validation = new Utils();
 
         public IActionResult OnGet()
         {
@@ -54,6 +56,11 @@ namespace LaundryMidlePlatform.Pages.Stores
                 ModelState.AddModelError("Store.Address", "Address cannot null");
                 isValid = false;
             }
+            else if (Regex.IsMatch(Store.Address, @"\s"))
+            {
+                ModelState.AddModelError("Store.Address", "StoreName cannot contain spaces");
+                isValid = false;
+            }
             /*else
             {
                 // Regular expression pattern for email validation
@@ -76,6 +83,11 @@ namespace LaundryMidlePlatform.Pages.Stores
                 ModelState.AddModelError("(Store.StoreName.", "StoreName cannot null");
                 isValid = false;
             }
+            else if (Regex.IsMatch(Store.StoreName, @"\s"))
+            {
+                ModelState.AddModelError("Store.StoreName", "StoreName cannot contain spaces");
+                isValid = false;
+            }
 
             if (Store.Status == null)
             {
@@ -86,8 +98,11 @@ namespace LaundryMidlePlatform.Pages.Stores
             {
                 ModelState.AddModelError("Store.Phone", "Phone cannot null");
                 isValid = false;
-            }
-            else
+            }else if (!validation.checkTelephoneFormat(Store.Phone))
+            {
+                ModelState.AddModelError("Store.Phone", "Phone Number cannnot consist letters and Length have to be between 10 - 13 numbers");
+                isValid = false;
+            } else
             {
                 // Kiểm tra xem giá trị Phone chỉ chứa ký tự số từ 0 đến 9
                 if (!Regex.IsMatch(Store.Phone, "^[0-9]+$"))

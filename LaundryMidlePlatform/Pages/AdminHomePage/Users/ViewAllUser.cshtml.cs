@@ -38,5 +38,11 @@ namespace LaundryMidlePlatform.Pages.Users
             User = UserRepository.GetAllUsers();
             return Page();
         }
+
+        public IActionResult OnPost()
+        {
+            HttpContext.Session.Remove("customerEmail");
+            return RedirectToPage("/Index");
+        }
     }
 }

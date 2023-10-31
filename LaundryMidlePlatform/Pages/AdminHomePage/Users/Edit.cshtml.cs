@@ -93,6 +93,11 @@ namespace LaundryMidlePlatform.Pages.Users
                 ModelState.AddModelError("User.Email", "Email cannot null");
                 isValid = false;
             }
+            else if (Regex.IsMatch(User.Email, @"\s"))
+            {
+                ModelState.AddModelError("User.Email", "Email cannot contain spaces");
+                isValid = false;
+            }
             else
             {
                 // Regular expression pattern for email validation
@@ -119,6 +124,11 @@ namespace LaundryMidlePlatform.Pages.Users
             if (string.IsNullOrEmpty(User.Address))
             {
                 ModelState.AddModelError("User.Address", "Address cannot null");
+                isValid = false;
+            }
+            else if (Regex.IsMatch(User.Address, @"\s"))
+            {
+                ModelState.AddModelError("User.Address", "Address cannot contain spaces");
                 isValid = false;
             }
 

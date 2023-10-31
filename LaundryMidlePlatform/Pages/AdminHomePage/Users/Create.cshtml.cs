@@ -114,6 +114,11 @@ namespace LaundryMidlePlatform.Pages.Users
                 ModelState.AddModelError("User.Address", "Address cannot null");
                 isValid = false;
             }
+            else if (Regex.IsMatch(User.Address, @"\s"))
+            {
+                ModelState.AddModelError("User.Address", "Address cannot contain spaces");
+                isValid = false;
+            }
 
             if (User.DateOfBirth == DateTime.MinValue)
             {
@@ -138,6 +143,11 @@ namespace LaundryMidlePlatform.Pages.Users
             if (string.IsNullOrEmpty(User.Password))
             {
                 ModelState.AddModelError("User.Password", "Password cannot null");
+                isValid = false;
+            }
+            else if (Regex.IsMatch(User.Password, @"\s"))
+            {
+                ModelState.AddModelError("User.Password", "Password cannot contain spaces");
                 isValid = false;
             }
 

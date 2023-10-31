@@ -12,6 +12,8 @@ using Repository.Interface;
 using Repository.IRepository;
 using Repository.Implements;
 using System.Text.RegularExpressions;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
+using Validation;
 
 namespace LaundryMidlePlatform.Pages.Stores
 {
@@ -19,6 +21,7 @@ namespace LaundryMidlePlatform.Pages.Stores
     {
         private readonly IStoreRepository _storeRepository = new StoreRepository();
 
+        private Utils validation = new Utils();
 
 
         [BindProperty]
@@ -90,6 +93,12 @@ namespace LaundryMidlePlatform.Pages.Stores
                 ModelState.AddModelError("Store.Address", "Address cannot null");
                 isValid = false;
             }
+            else if (Regex.IsMatch(Store.Address, @"\s"))
+            {
+                ModelState.AddModelError("Store.Address", "StoreAddress cannot contain spaces");
+                isValid = false;
+            }
+            
             /*else
             {
                 // Regular expression pattern for email validation
@@ -109,7 +118,12 @@ namespace LaundryMidlePlatform.Pages.Stores
             }
             if (string.IsNullOrEmpty(Store.StoreName))
             {
-                ModelState.AddModelError("(Store.StoreName.", "StoreName cannot null");
+                ModelState.AddModelError("(Store.StoreName.", "Name cannot null");
+                isValid = false;
+            }
+            else if (Regex.IsMatch(Store.StoreName, @"\s"))
+            {
+                ModelState.AddModelError("Store.StoreName", "Name cannot contain spaces");
                 isValid = false;
             }
 
@@ -121,6 +135,11 @@ namespace LaundryMidlePlatform.Pages.Stores
             if (string.IsNullOrEmpty(Store.Phone))
             {
                 ModelState.AddModelError("Store.Phone", "Phone cannot null");
+                isValid = false;
+            }
+            else if (!validation.checkTelephoneFormat(Store.Phone))
+            {
+                ModelState.AddModelError("Store.Phone", "Phone Number cannnot consist letters and Length have to be between 10 - 13 numbers");
                 isValid = false;
             }
             else
