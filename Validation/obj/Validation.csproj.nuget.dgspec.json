@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\Validation\\Validation.csproj": {}
+    "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\Validation\\Validation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\Validation\\Validation.csproj": {
+    "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\Validation\\Validation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\Validation\\Validation.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\Validation\\Validation.csproj",
         "projectName": "Validation",
-        "projectPath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\Validation\\Validation.csproj",
+        "projectPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\Validation\\Validation.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\Validation\\obj\\",
+        "outputPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\Validation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",

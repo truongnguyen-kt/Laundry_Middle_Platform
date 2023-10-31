@@ -6,7 +6,9 @@
     Layout = "Shared/_AdminLayout";
 
 }
-
+<head>
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
 <h1>Details</h1>
 
 <div>
@@ -84,6 +86,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.User?.UserId">Edit</a> |
+    <a asp-page="./Edit" asp-route-id="@Model.User?.UserId" >Edit</a>    |
     <a asp-page="./ViewAllUser">Quay lại danh sách</a>
 </div>

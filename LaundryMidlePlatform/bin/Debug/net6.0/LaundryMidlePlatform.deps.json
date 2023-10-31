@@ -9,12 +9,14 @@
       "LaundryMidlePlatform/1.0.0": {
         "dependencies": {
           "BusinessObjects": "1.0.0",
+          "DataAccess": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.23",
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.23",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.23",
           "Microsoft.Extensions.DependencyInjection": "6.0.1",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.16",
-          "Repository": "1.0.0"
+          "Repository": "1.0.0",
+          "Validation": "1.0.0"
         },
         "runtime": {
           "LaundryMidlePlatform.dll": {}
@@ -2729,6 +2731,11 @@
         "runtime": {
           "Repository.dll": {}
         }
+      },
+      "Validation/1.0.0": {
+        "runtime": {
+          "Validation.dll": {}
+        }
       }
     }
   },
@@ -4352,6 +4359,11 @@
       "sha512": ""
     },
     "Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Validation/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

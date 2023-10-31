@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj": {}
+    "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj": {
+    "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj",
         "projectName": "BusinessObjects",
-        "projectPath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj",
+        "projectPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\BusinessObjects\\obj\\",
+        "outputPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\BusinessObjects\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",

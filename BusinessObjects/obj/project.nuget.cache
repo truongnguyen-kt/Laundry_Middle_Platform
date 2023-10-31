@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "isHM3d17EDMgXMgXxMc2pnR+m/xJRJBkfQYtN9Aoc/ejdrHNhOTbjpcJ8xX5dYhL0I97cTVvjEtSTB/GQ0xXLw==",
+  "dgSpecHash": "CCQlcaKafjn/JfQeu9ETfsGiYF/SZ2h/Bl0O6SxQSWLtZRONkAiZVINfVP/ZJMq+vwiMWQfD6X2yG95MeIuZZA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj",
+  "projectFilePath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ASUS\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
