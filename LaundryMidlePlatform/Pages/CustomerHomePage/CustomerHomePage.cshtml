@@ -1,12 +1,17 @@
 ﻿@page
 @model LaundryMidlePlatform.Pages.CustomerHomePage.CustomerHomePageModel
-@{}
+@{
+}
 <div class="text-center" style="margin-top: 10px;">
     <h3>Welcome come back: @Model.Email</h3>
-    <div style="margin: 10px;">
-        <a asp-page="/CustomerHomePage/viewAllStores" style="font-size: 20px; display: block; margin: 20px;">View All Stores</a>
-        <a asp-page="/CustomerHomePage/updateProfileCustomer" style="font-size: 20px; display: block; margin: 20px;">Update Profile Customer</a>
-        <a asp-page="/CustomerHomePage/viewOrderHistoryCustomer" style="font-size: 20px; display: block; margin: 20px;">View Order History Customer</a>
+    <div style="margin: 10px; align-items: center;">
+        <form method="get">
+            <button asp-page="/CustomerHomePage/viewAllStores" type="submit" class="btn btn-primary" style="margin-top: 10px;" asp>View All Stores</button>
+            <button asp-page="/CustomerHomePage/updateProfileCustomer" type="submit" class="btn btn-primary" style="margin-top: 10px;" asp>Account Settings</button>
+            <button asp-page="/CustomerHomePage/viewOrderHistoryCustomer" type="submit" class="btn btn-primary" style="margin-top: 10px;" asp>View Order History Customer</button>
+
+        </form>
+
     </div>
     <form method="post">
         <button type="submit" class="btn btn-primary" style="font-size: 20px; margin:20px;">Log out</button>
