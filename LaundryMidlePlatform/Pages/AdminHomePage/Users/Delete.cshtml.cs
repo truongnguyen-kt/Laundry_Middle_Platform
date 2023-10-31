@@ -22,6 +22,12 @@ namespace LaundryMidlePlatform.Pages.Users
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            string email = HttpContext.Session.GetString("customerEmail");
+            if (email == null)
+            {
+                return Redirect("../Index");
+            }
+
             if (id == null)
             {
                 return NotFound();
@@ -49,7 +55,7 @@ namespace LaundryMidlePlatform.Pages.Users
                 _userRepository.DeleteUser(User.UserId);
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./ViewAllUser");
         }
     }
 }

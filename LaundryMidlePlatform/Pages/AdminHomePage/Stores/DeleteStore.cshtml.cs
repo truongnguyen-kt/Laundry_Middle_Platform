@@ -52,7 +52,7 @@ namespace LaundryMidlePlatform.Pages.Stores
                 _storeRepository.DeleteStore(Store.StoreId);
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./ViewAllStore");
         }
     }
 }

@@ -48,7 +48,9 @@ namespace LaundryMidlePlatform.Pages
             if (user != null)
             {
                 HttpContext.Session.SetString("customerEmail", Email.Trim());
-                return RedirectToPage("/CustomerHomePage/CustomerHomePage");
+                if (user.RoleId == 2) return RedirectToPage("/CustomerHomePage/CustomerHomePage");
+                if (user.RoleId == 3) return RedirectToPage("/AdminHomePage/Stores/ViewAllStore");
+                return RedirectToPage("/AdminHomePage/Users/ViewAllUser");
             }
             else
             {

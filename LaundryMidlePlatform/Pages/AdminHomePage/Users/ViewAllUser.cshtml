@@ -1,0 +1,89 @@
+﻿@page
+@model LaundryMidlePlatform.Pages.Users.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "Shared/_AdminLayout";
+
+}
+<h1 class="text-center"> <i class="fas fa-comment-dollar text-succes"></i> LauchDry Shop </h1>
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>
+            <h3  style="background-color: #f5f5f5; text-align: center; padding: 20px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); color: #333; font-size: 24px;">Welcome come back: @Model.Email</h3>
+        </h1>
+        <p>
+            <a class="btn btn-success text-white" asp-page="Create"><i class ="fas fa-random"></i>Tạo Mới</a>
+        </p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.User[0].FirstName)</th>
+                    <th>@Html.DisplayNameFor(model => model.User[0].LastName)</th>
+                    <th>@Html.DisplayNameFor(model => model.User[0].Email)</th>
+                    <th>@Html.DisplayNameFor(model => model.User[0].Phone)</th>
+                    <th>@Html.DisplayNameFor(model => model.User[0].Password)</th>
+                    <th>@Html.DisplayNameFor(model => model.User[0].Gender)</th>
+                    <th>@Html.DisplayNameFor(model => model.User[0].Address)</th>
+                    <th>@Html.DisplayNameFor(model => model.User[0].DateOfBirth)</th>
+                    <th>@Html.DisplayNameFor(model => model.User[0].Role)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.User)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Phone)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Password)</td>
+                        <td>
+                            @if ((bool)item.Gender)
+                            {
+                                <text>Nam</text>
+                            }
+                            else
+                            {
+                                <text>Nữ</text>
+                            }
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DateOfBirth)</td>
+                        <td>
+                            @if (item.RoleId == 1)
+                            {
+                                <text>Admin</text>
+                            }
+                            else if (item.RoleId == 2)
+                            {
+                                <text>Guest</text>
+                            }
+                        </td>
+                        <td>
+                            <a class="btn btn-info" asp-page="./Edit" asp-route-id="@item.UserId">Sửa</a>
+                            <a class="btn btn-primary" asp-page="./Details" asp-route-id="@item.UserId">Chi tiết</a>
+                            <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.UserId">Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
+
+

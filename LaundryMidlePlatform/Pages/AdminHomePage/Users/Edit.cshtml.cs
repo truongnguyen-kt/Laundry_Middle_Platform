@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using BusinessObjects.Models;
 using Repository.Implement;
 using Repository.Interface;
@@ -12,53 +13,76 @@ using System.Text.RegularExpressions;
 
 namespace LaundryMidlePlatform.Pages.Users
 {
-    public class CreateModel : PageModel
+    public class EditModel : PageModel
     {
         private readonly IUserRepository _userRepository = new UserRepository();
-
-
 
 
 
         [BindProperty]
         public User User { get; set; } = default!;
 
+        public async Task<IActionResult> OnGetAsync(int? id)
+        {
+            string email = HttpContext.Session.GetString("customerEmail");
+            if (email == null)
+            {
+                return Redirect("../Index");
+            }
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
+            if (id == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                User = _userRepository.GetUserById((int)id);
+            }
+
+
+            if (User == null)
+            {
+                return NotFound();
+            }
+
+            return Page();
+        }
+
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-
             if (!ValidateInputs())
             {
                 return Page();
             }
-            var UserByEmail = _userRepository.GetUserByEmail(User.Email);
-            bool flag = false;
-            if (UserByEmail != null && UserByEmail.Count > 0)
+
+            try
             {
-                foreach (var obj in UserByEmail)
+                _userRepository.UpdateUser(User);
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!UserExists(User.UserId))
                 {
-                    if (obj.Email.CompareTo(User.Email) == 0)
-                    {
-                        if (obj.UserId != User.UserId)
-                        {
-                            flag = true;
-                        }
-                    }
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
                 }
             }
-            if (flag)
-            {
-                ModelState.AddModelError("User.Email", "Email Already Owned");
-                return Page();
-            }
-            _userRepository.AddNewCustomer(User);
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./ViewAllUser");
+        }
+
+        private bool UserExists(int id)
+        {
+            return _userRepository.GetUserById(id) != null;
         }
         private bool ValidateInputs()
         {
@@ -91,20 +115,6 @@ namespace LaundryMidlePlatform.Pages.Users
                 ModelState.AddModelError("(User.LastName.", "LastName cannot null");
                 isValid = false;
             }
-            if (string.IsNullOrEmpty(User.Phone))
-            {
-                ModelState.AddModelError("(User.Phone.", "Phone cannot null");
-                isValid = false;
-            }
-            else
-            {
-                // Kiểm tra xem giá trị Phone chỉ chứa ký tự số từ 0 đến 9
-                if (!Regex.IsMatch(User.Phone, "^[0-9]+$"))
-                {
-                    ModelState.AddModelError("User.Phone", "Phone must contain only numeric digits (0-9)");
-                    isValid = false;
-                }
-            }
 
             if (string.IsNullOrEmpty(User.Address))
             {
@@ -116,21 +126,6 @@ namespace LaundryMidlePlatform.Pages.Users
             {
                 ModelState.AddModelError("User.DateOfBirth", "DateOfBirth cannot null");
                 isValid = false;
-            }
-            else
-            {
-                // Tính khoảng thời gian giữa ngày sinh và ngày hiện tại
-                TimeSpan ageDifference = DateTime.Now - (DateTime)User.DateOfBirth;
-
-                // Tính tuổi dựa trên khoảng thời gian
-                int age = (int)(ageDifference.TotalDays / 365.25); // Sử dụng 365.25 để xem xét năm nhuận
-
-                // Kiểm tra xem tuổi có lớn hơn 11 hay không
-                if (age < 12)
-                {
-                    ModelState.AddModelError("User.DateOfBirth", "You must be at least 12 years old.");
-                    isValid = false;
-                }
             }
             if (string.IsNullOrEmpty(User.Password))
             {

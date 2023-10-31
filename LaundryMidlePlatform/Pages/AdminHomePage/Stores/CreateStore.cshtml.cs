@@ -5,82 +5,46 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using BusinessObjects.Models;
-using Repository.Implement;
-using Repository.Interface;
-using Repository.IRepository;
+using DataAccess;
 using Repository.Implements;
+using Repository.IRepository;
 using System.Text.RegularExpressions;
 
 namespace LaundryMidlePlatform.Pages.Stores
 {
-    public class EditModel : PageModel
+    public class CreateModel : PageModel
     {
-        private readonly IStoreRepository _storeRepository = new StoreRepository();
+        private readonly LaundryMiddlePlatformContext _context = new LaundryMiddlePlatformContext();
+
+        private readonly StoreRepository storeRepository = new StoreRepository();
 
 
+        public IActionResult OnGet()
+        {
+            return Page();
+        }
 
         [BindProperty]
         public Store Store { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-            else
-            {
-                Store = _storeRepository.GetStoreById((int)id);
-            }
-
-
-            if (Store == null)
-            {
-                return NotFound();
-            }
-
-            return Page();
-        }
-
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see https://aka.ms/RazorPagesCRUD.
+        
+        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || _context.Stores == null || Store == null)
             {
                 return Page();
             }
-
             if (!ValidateInputs())
             {
                 return Page();
             }
-            try
-            {
-                _storeRepository.UpdateStore(Store, Store.StoreId);
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!StoreExists(Store.StoreId))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
 
-            return RedirectToPage("./Index");
+            storeRepository.AddStore(Store);
+
+            return RedirectToPage("./ViewAllStore");
         }
-
-        private bool StoreExists(int id)
-        {
-            return _storeRepository.GetStoreById(id) != null;
-        }
-
         private bool ValidateInputs()
         {
             var isValid = true;

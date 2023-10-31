@@ -3,11 +3,25 @@
 
 @{
     ViewData["Title"] = "Delete";
-}
+    Layout = "Shared/_AdminLayout";
 
+}
+<style>
+    h1 {
+        font-family: "Your Font Name", sans-serif; /* Thay "Your Font Name" bằng tên phông chữ bạn muốn sử dụng */
+        font-size: 36px; /* Điều chỉnh kích thước theo ý muốn của bạn */
+        color: #333; /* Điều chỉnh màu sắc theo ý muốn của bạn */
+    }
+
+    h4 {
+        font-family: "Your Font Name", sans-serif; /* Thay "Your Font Name" bằng tên phông chữ bạn muốn sử dụng */
+        font-size: 24px; /* Điều chỉnh kích thước theo ý muốn của bạn */
+        color: #666; /* Điều chỉnh màu sắc theo ý muốn của bạn */
+    }
+</style>
 <h1>Delete</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h4>Are you sure you want to delete this?</h4>
 <div>
     <h4>Store</h4>
     <hr />
@@ -47,6 +61,6 @@
     <form method="post">
         <input type="hidden" asp-for="Store.StoreId" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
+        <a asp-page="./ViewAllStore">Quay lại danh sách</a>
     </form>
 </div>
