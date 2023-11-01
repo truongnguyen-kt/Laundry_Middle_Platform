@@ -1,0 +1,140 @@
+﻿@page
+@model LaundryMidlePlatform.Pages.Users.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "Shared/_AdminLayout";
+
+}
+<head>
+    <!-- Nhúng phông chữ Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="path-to-bootstrap.css" rel="stylesheet">
+
+</head>
+
+<style>
+    /* h1 {
+        font-family: 'Arial', sans-serif;
+        font-size: 36px;
+        color: #333;
+    } */
+
+    h4 {
+        font-family: 'Arial', sans-serif;
+        font-size: 24px;
+        color: #666;
+    }
+</style>
+<h1>Create</h1>
+
+<h4>User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="User.FirstName" class="control-label"></label>
+                <input asp-for="User.FirstName" class="form-control" />
+                <span asp-validation-for="User.FirstName" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col-md-6" >
+                    <div class="form-group">
+                        <label asp-for="User.LastName" class="control-label"></label>
+                        <input asp-for="User.LastName" class="form-control" />
+                        <span asp-validation-for="User.LastName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6" >
+                    <div class="form-group">
+                        <label asp-for="User.Email" class="control-label"></label>
+                        <input asp-for="User.Email" class="form-control" />
+                        <span asp-validation-for="User.Email" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <style>
+                        .dollar-icon i {
+                            font-size: 30px; /* Điều chỉnh kích thước biểu tượng theo ý muốn của bạn */
+                            line-height: 30px;
+                        }
+                    </style>
+                    <div class="form-group">
+                        <label asp-for="User.Phone" class="control-label"></label>
+                        <div class="input-group">
+                            <!-- Sử dụng input-group để chứa biểu tượng và trường nhập số điện thoại -->
+                            <div class="input-group-prepend">
+                                <span class="input-group-text  dollar-icon">
+                                    <i class="fas fa-phone " ></i> <!-- Sử dụng Font Awesome biểu tượng số điện thoại -->
+                                </span>
+                            </div>
+                            <input asp-for="User.Phone" class="form-control" />
+                        </div>
+                        <span asp-validation-for="User.Phone" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="User.Password" class="control-label"></label>
+                        <input asp-for="User.Password" class="form-control" />
+                        <span asp-validation-for="User.Password" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="User.Gender" class="control-label"></label>
+                        <select asp-for="User.Gender" class="form-control">
+                            <option value="false">Female</option>
+                            <option value="true">Male</option>
+                        </select>
+                        <span asp-validation-for="User.Gender" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="User.Address" class="control-label"></label>
+                        <input asp-for="User.Address" class="form-control" />
+                        <span asp-validation-for="User.Address" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="User.DateOfBirth" class="control-label"></label>
+                        <input asp-for="User.DateOfBirth" class="form-control" />
+                        <span asp-validation-for="User.DateOfBirth" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="User.RoleId" class="control-label"></label>
+                        <select asp-for="User.RoleId" class="form-control">
+                            <option value=1>Guest</option>
+                            <option value=2>Store</option>
+                        </select>
+                        <span asp-validation-for="User.RoleId" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary btn-block" style="width: 100%;
+    margin-top: 25px;" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="ViewAllUser"> Quay lại danh sách</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

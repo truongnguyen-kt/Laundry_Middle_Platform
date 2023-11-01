@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using BusinessObjects.Models;
 using Repository.Implement;
 using Repository.Interface;
+using Microsoft.AspNetCore.SignalR;
 
 namespace LaundryMidlePlatform.Pages.Users
 {
@@ -17,15 +18,31 @@ namespace LaundryMidlePlatform.Pages.Users
 
 
 
-
+        public string Email { get; private set; }
         public IList<User> User { get; set; } = default!;
 
         public int? RoleId { get; set; }
         public IActionResult OnGetAsync()
         {   
+            string email = HttpContext.Session.GetString("customerEmail");
+            if (email == null)
+            {
+                return Redirect("../Index");
+                
+            }
+            else
+            {
+                Email = email;
+            }
 
             User = UserRepository.GetAllUsers();
             return Page();
+        }
+
+        public IActionResult OnPost()
+        {
+            HttpContext.Session.Remove("customerEmail");
+            return RedirectToPage("/Index");
         }
     }
 }

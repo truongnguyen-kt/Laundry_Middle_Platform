@@ -24,6 +24,12 @@ namespace LaundryMidlePlatform.Pages.Users
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            string email = HttpContext.Session.GetString("customerEmail");
+            if (email == null)
+            {
+                return Redirect("../Index");
+            }
+
             if (id == null)
             {
                 return NotFound();
@@ -71,7 +77,7 @@ namespace LaundryMidlePlatform.Pages.Users
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./ViewAllUser");
         }
 
         private bool UserExists(int id)
@@ -85,6 +91,11 @@ namespace LaundryMidlePlatform.Pages.Users
             if (string.IsNullOrEmpty(User.Email))
             {
                 ModelState.AddModelError("User.Email", "Email cannot null");
+                isValid = false;
+            }
+            else if (Regex.IsMatch(User.Email, @"\s"))
+            {
+                ModelState.AddModelError("User.Email", "Email cannot contain spaces");
                 isValid = false;
             }
             else
@@ -113,6 +124,11 @@ namespace LaundryMidlePlatform.Pages.Users
             if (string.IsNullOrEmpty(User.Address))
             {
                 ModelState.AddModelError("User.Address", "Address cannot null");
+                isValid = false;
+            }
+            else if (Regex.IsMatch(User.Address, @"\s"))
+            {
+                ModelState.AddModelError("User.Address", "Address cannot contain spaces");
                 isValid = false;
             }
 

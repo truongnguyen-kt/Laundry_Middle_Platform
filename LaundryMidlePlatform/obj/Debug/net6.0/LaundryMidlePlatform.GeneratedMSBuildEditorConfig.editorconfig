@@ -9,117 +9,141 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LaundryMidlePlatform
 build_property.RootNamespace = LaundryMidlePlatform
-build_property.ProjectDir = C:\Users\ASUS\Desktop\LauchDry2\Laundry_Middle_Platform\LaundryMidlePlatform\
+build_property.ProjectDir = C:\Users\ASUS\Desktop\Test\Laundry_Middle_Platform\LaundryMidlePlatform\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\ASUS\Desktop\LauchDry2\Laundry_Middle_Platform\LaundryMidlePlatform
+build_property.MSBuildProjectDirectory = C:\Users\ASUS\Desktop\Test\Laundry_Middle_Platform\LaundryMidlePlatform
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Error.cshtml]
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Stores/CreateStore.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxTdG9yZXNcQ3JlYXRlU3RvcmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Stores/DeleteStore.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxTdG9yZXNcRGVsZXRlU3RvcmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Stores/StoreDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxTdG9yZXNcU3RvcmVEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Stores/UpdateStore.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxTdG9yZXNcVXBkYXRlU3RvcmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Stores/ViewAllStore.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxTdG9yZXNcVmlld0FsbFN0b3JlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Users/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxVc2Vyc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Users/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxVc2Vyc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Users/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxVc2Vyc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Users/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxVc2Vyc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Users/ViewAllUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxVc2Vyc1xWaWV3QWxsVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/CustomerHomePage/CustomerHomePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJIb21lUGFnZVxDdXN0b21lckhvbWVQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/CustomerHomePage/updateProfileCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJIb21lUGFnZVx1cGRhdGVQcm9maWxlQ3VzdG9tZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/CustomerHomePage/ViewAllStores.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJIb21lUGFnZVxWaWV3QWxsU3RvcmVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/CustomerHomePage/viewOrderHistoryCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJIb21lUGFnZVx2aWV3T3JkZXJIaXN0b3J5Q3VzdG9tZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Index.cshtml]
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Create.cshtml]
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Delete.cshtml]
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Details.cshtml]
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Edit.cshtml]
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Index.cshtml]
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Privacy.cshtml]
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Register/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Stores/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVzXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Stores/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVzXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Stores/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVzXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Stores/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Stores/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Create.cshtml]
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHlwZVBhZ2VcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Delete.cshtml]
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHlwZVBhZ2VcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Details.cshtml]
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHlwZVBhZ2VcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Edit.cshtml]
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHlwZVBhZ2VcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Index.cshtml]
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHlwZVBhZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Users/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Users/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Users/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Users/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Users/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/_ViewImports.cshtml]
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/_ViewStart.cshtml]
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ASUS/Desktop/LauchDry2/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Shared/_Layout.cshtml]
+[C:/Users/ASUS/Desktop/Test/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-xszxmsy13q

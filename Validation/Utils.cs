@@ -56,8 +56,6 @@ namespace Validation
                 return false;
             }
         }
-
-
         public bool checkEmailPattern(string email)
         {
             if (email == null)

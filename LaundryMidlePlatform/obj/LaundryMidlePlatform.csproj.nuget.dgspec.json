@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\LaundryMidlePlatform\\LaundryMidlePlatform.csproj": {}
+    "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\LaundryMidlePlatform\\LaundryMidlePlatform.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj": {
+    "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj",
         "projectName": "BusinessObjects",
-        "projectPath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj",
+        "projectPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\BusinessObjects\\obj\\",
+        "outputPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\BusinessObjects\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -91,14 +91,14 @@
         }
       }
     },
-    "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -115,8 +115,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj": {
-                "projectPath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj"
+              "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj": {
+                "projectPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj"
               }
             }
           }
@@ -160,14 +160,14 @@
         }
       }
     },
-    "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\LaundryMidlePlatform\\LaundryMidlePlatform.csproj": {
+    "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\LaundryMidlePlatform\\LaundryMidlePlatform.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\LaundryMidlePlatform\\LaundryMidlePlatform.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\LaundryMidlePlatform\\LaundryMidlePlatform.csproj",
         "projectName": "LaundryMidlePlatform",
-        "projectPath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\LaundryMidlePlatform\\LaundryMidlePlatform.csproj",
+        "projectPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\LaundryMidlePlatform\\LaundryMidlePlatform.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\LaundryMidlePlatform\\obj\\",
+        "outputPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\LaundryMidlePlatform\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -184,11 +184,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj": {
-                "projectPath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj"
+              "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj": {
+                "projectPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj"
               },
-              "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\Repository\\Repository.csproj": {
-                "projectPath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\Repository\\Repository.csproj"
+              "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\DataAccess\\DataAccess.csproj"
+              },
+              "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\Repository\\Repository.csproj": {
+                "projectPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\Repository\\Repository.csproj"
+              },
+              "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\Validation\\Validation.csproj": {
+                "projectPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\Validation\\Validation.csproj"
               }
             }
           }
@@ -249,14 +255,14 @@
         }
       }
     },
-    "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\Repository\\Repository.csproj": {
+    "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\Repository\\Repository.csproj",
+        "projectPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\Repository\\obj\\",
+        "outputPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -273,11 +279,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj": {
-                "projectPath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj"
+              "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj": {
+                "projectPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj"
               },
-              "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\DataAccess\\DataAccess.csproj"
               }
             }
           }
@@ -301,6 +307,61 @@
               "version": "[6.0.16, )"
             }
           },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\Validation\\Validation.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\Validation\\Validation.csproj",
+        "projectName": "Validation",
+        "projectPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\Validation\\Validation.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\Validation\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",

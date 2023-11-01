@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WDRF1m4/w9MlYh4/jEXpQAt4NbL3WpxVaM8Djk/OgY1MjV4dtTs+H28AB70/i8ftPb97mcXa2DAgUZvk7XdF8w==",
+  "dgSpecHash": "sULsWXbrVNw32R50GW4aENv22+uGqUXUcER66dStgaPvgoZ555vya+pQ1nTWsCKZLn4SuPrDSPRLRkZV0ySxJQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ASUS\\Desktop\\LauchDry2\\Laundry_Middle_Platform\\LaundryMidlePlatform\\LaundryMidlePlatform.csproj",
+  "projectFilePath": "C:\\Users\\ASUS\\Desktop\\Test\\Laundry_Middle_Platform\\LaundryMidlePlatform\\LaundryMidlePlatform.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ASUS\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

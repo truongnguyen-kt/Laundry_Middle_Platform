@@ -19,13 +19,23 @@ namespace LaundryMidlePlatform.Pages.Stores
 
 
 
-
+        public string Email { get; set; }
         public IList<Store> Store { get; set; } = default!;
 
         public int? RoleId { get; set; }
         public IActionResult OnGetAsync()
         {
 
+            string email = HttpContext.Session.GetString("customerEmail");
+            if (email == null)
+            {
+                return Redirect("../Index");
+
+            }
+            else
+            {
+                Email = email;
+            }
             Store = storeRepository.GetAllStores();
             return Page();
         }

@@ -5,46 +5,85 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using BusinessObjects.Models;
-using DataAccess;
-using Repository.Implements;
+using Repository.Implement;
+using Repository.Interface;
 using Repository.IRepository;
+using Repository.Implements;
 using System.Text.RegularExpressions;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
+using Validation;
 
 namespace LaundryMidlePlatform.Pages.Stores
 {
-    public class CreateModel : PageModel
+    public class EditModel : PageModel
     {
-        private readonly LaundryMiddlePlatformContext _context = new LaundryMiddlePlatformContext();
+        private readonly IStoreRepository _storeRepository = new StoreRepository();
 
-        private readonly StoreRepository storeRepository = new StoreRepository();
+        private Utils validation = new Utils();
 
-
-        public IActionResult OnGet()
-        {
-            return Page();
-        }
 
         [BindProperty]
         public Store Store { get; set; } = default!;
 
-        
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
+        public async Task<IActionResult> OnGetAsync(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                Store = _storeRepository.GetStoreById((int)id);
+            }
+
+
+            if (Store == null)
+            {
+                return NotFound();
+            }
+
+            return Page();
+        }
+
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _context.Stores == null || Store == null)
+            if (!ModelState.IsValid)
             {
                 return Page();
             }
+
             if (!ValidateInputs())
             {
                 return Page();
             }
+            try
+            {
+                _storeRepository.UpdateStore(Store, Store.StoreId);
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!StoreExists(Store.StoreId))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-            storeRepository.AddStore(Store);
-
-            return RedirectToPage("./Index");
+            return RedirectToPage("./ViewAllStore");
         }
+
+        private bool StoreExists(int id)
+        {
+            return _storeRepository.GetStoreById(id) != null;
+        }
+
         private bool ValidateInputs()
         {
             var isValid = true;
@@ -54,6 +93,12 @@ namespace LaundryMidlePlatform.Pages.Stores
                 ModelState.AddModelError("Store.Address", "Address cannot null");
                 isValid = false;
             }
+            else if (Regex.IsMatch(Store.Address, @"\s"))
+            {
+                ModelState.AddModelError("Store.Address", "StoreAddress cannot contain spaces");
+                isValid = false;
+            }
+            
             /*else
             {
                 // Regular expression pattern for email validation
@@ -73,7 +118,12 @@ namespace LaundryMidlePlatform.Pages.Stores
             }
             if (string.IsNullOrEmpty(Store.StoreName))
             {
-                ModelState.AddModelError("(Store.StoreName.", "StoreName cannot null");
+                ModelState.AddModelError("(Store.StoreName.", "Name cannot null");
+                isValid = false;
+            }
+            else if (Regex.IsMatch(Store.StoreName, @"\s"))
+            {
+                ModelState.AddModelError("Store.StoreName", "Name cannot contain spaces");
                 isValid = false;
             }
 
@@ -85,6 +135,11 @@ namespace LaundryMidlePlatform.Pages.Stores
             if (string.IsNullOrEmpty(Store.Phone))
             {
                 ModelState.AddModelError("Store.Phone", "Phone cannot null");
+                isValid = false;
+            }
+            else if (!validation.checkTelephoneFormat(Store.Phone))
+            {
+                ModelState.AddModelError("Store.Phone", "Phone Number cannnot consist letters and Length have to be between 10 - 13 numbers");
                 isValid = false;
             }
             else
