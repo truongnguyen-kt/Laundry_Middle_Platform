@@ -1,9 +1,24 @@
 ﻿@page
+@using BusinessObjects.Models;
+@using LaundryMidlePlatform.Pages.SessionHelpers;
 @model LaundryMidlePlatform.Pages.Users.IndexModel
 
 @{
     ViewData["Title"] = "Index";
     Layout = "Shared/_AdminLayout";
+
+}
+@{
+
+    ViewData["Title"] = "Admin";
+    var customer = SessionHelper.GetObjectFromJson<User>(HttpContext.Session, "admin");
+
+    if (customer == null)
+    {
+        RedirectToPage("/Error");
+        return;
+    }
+
 
 }
 <h1 class="text-center"> <i class="fas fa-comment-dollar text-succes"></i> LauchDry Shop </h1>
