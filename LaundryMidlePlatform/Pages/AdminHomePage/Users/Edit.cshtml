@@ -1,9 +1,24 @@
 ﻿@page
+@using BusinessObjects.Models;
+@using LaundryMidlePlatform.Pages.SessionHelpers;
 @model LaundryMidlePlatform.Pages.Users.EditModel
 
 @{
     ViewData["Title"] = "Edit";
     Layout = "Shared/_AdminLayout";
+
+}
+@{
+
+    ViewData["Title"] = "Admin";
+    var customer = SessionHelper.GetObjectFromJson<User>(HttpContext.Session, "admin");
+
+    if (customer == null)
+    {
+        RedirectToPage("/Error");
+        return;
+    }
+
 
 }
 

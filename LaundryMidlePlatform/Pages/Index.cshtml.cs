@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using LaundryMidlePlatform.Pages.SessionHelpers;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Repository.Implement;
 using Repository.Interface;
@@ -48,8 +49,18 @@ namespace LaundryMidlePlatform.Pages
             if (user != null)
             {
                 HttpContext.Session.SetString("customerEmail", Email.Trim());
-                if (user.RoleId == 2) return RedirectToPage("/CustomerHomePage/CustomerHomePage");
-                if (user.RoleId == 3) return RedirectToPage("/AdminHomePage/Stores/ViewAllStore");
+                if (user.RoleId == 2)
+                {
+                    SessionHelper.SetObjectAsJson(HttpContext.Session, "customer", user);
+                    return RedirectToPage("/CustomerHomePage/CustomerHomePage");
+                }
+                if (user.RoleId == 3)
+                {
+                    SessionHelper.SetObjectAsJson(HttpContext.Session, "store", user);
+                    return RedirectToPage("/StoreHomePage/Index");
+                }
+
+                SessionHelper.SetObjectAsJson(HttpContext.Session, "admin", user);
                 return RedirectToPage("/AdminHomePage/Users/ViewAllUser");
             }
             else

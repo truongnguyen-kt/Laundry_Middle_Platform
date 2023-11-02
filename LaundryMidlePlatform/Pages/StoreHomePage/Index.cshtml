@@ -1,0 +1,20 @@
+﻿@page
+@using BusinessObjects.Models;
+@using LaundryMidlePlatform.Pages.SessionHelpers;
+@model LaundryMidlePlatform.Pages.StoreHomePage.IndexModel
+@{
+}
+@{
+
+    ViewData["Title"] = "Store";
+    var customer = SessionHelper.GetObjectFromJson<User>(HttpContext.Session, "store");
+
+    if (customer == null)
+    {
+        RedirectToPage("/Error");
+        return;
+    }
+
+
+}
+<h1>Store HomePage</h1>

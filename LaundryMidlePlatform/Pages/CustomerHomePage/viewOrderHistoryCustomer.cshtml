@@ -1,6 +1,21 @@
 ﻿@page
+@using BusinessObjects.Models;
+@using LaundryMidlePlatform.Pages.SessionHelpers;
 @model LaundryMidlePlatform.Pages.CustomerHomePage.viewOrderHistoryCustomerModel
 @{
+}
+@{
+
+    ViewData["Title"] = "Customer";
+    var customer = SessionHelper.GetObjectFromJson<User>(HttpContext.Session, "customer");
+
+    if (customer == null)
+    {
+        RedirectToPage("/Error");
+        return;
+    }
+
+
 }
 <h2>View Order Transactions</h2>
 <div class="text-center" style="margin-top: 15px;">
