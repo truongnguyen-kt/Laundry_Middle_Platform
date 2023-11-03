@@ -40,12 +40,12 @@ namespace LaundryMidlePlatform.Pages.CustomerHomePage
 
         public IActionResult OnPostAsync()
         {
-            if (validation.CheckContainDegit(User.FirstName))
+            if (validation.CheckContainDigit(User.FirstName))
             {
                 Error = "Customer First Name can not contains digits. Can not update Customer Account";
                 return Page();
             }
-            if (validation.CheckContainDegit(User.LastName))
+            if (validation.CheckContainDigit(User.LastName))
             {
                 Error = "Customer Last Name can not contains digits. Can not update Customer Account";
                 return Page();
@@ -67,7 +67,6 @@ namespace LaundryMidlePlatform.Pages.CustomerHomePage
             {
                 return Page();
             }
-
             try
             {
                 userRepository.UpdateUser(User);

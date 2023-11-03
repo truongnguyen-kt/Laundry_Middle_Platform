@@ -16,5 +16,7 @@ namespace Repository.Implements
         public bool UpdateWashingMachine(WashingMachine washingMachine, int washingMachineId) => MachineDAO.Instance.UpdateWashingMachine(washingMachine, washingMachineId);
         public bool DeleteWashingMachine(int washingMachineId) => MachineDAO.Instance.DeleteWashingMachine(washingMachineId);
         public WashingMachine GetWashingMachineById(int washingMachineId) => MachineDAO.Instance.GetWashingMachineById(washingMachineId);
+
+        public IList<WashingMachine> GetWashingMachinesByStoreId(int storeId) => MachineDAO.Instance.GetWashingMachinesByStoreId(storeId);
     }
 }

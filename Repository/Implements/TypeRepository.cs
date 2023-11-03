@@ -1,4 +1,5 @@
-﻿using DataAccess;
+﻿using BusinessObjects.Models;
+using DataAccess;
 using Repository.Interface;
 using System;
 using System.Collections.Generic;
@@ -17,5 +18,7 @@ namespace Repository.Implements
         public bool updateType(BusinessObjects.Models.Type order, int orderId) => TypeDAO.Instance.updateType(order, orderId);
         public bool createType(BusinessObjects.Models.Type order) => TypeDAO.Instance.createType(order);
         public bool deleteType(int orderId) => TypeDAO.Instance.deleteType(orderId);
+
+        public BusinessObjects.Models.Type findTypeByName(string name) => TypeDAO.Instance.findTypeByName(name);
     }
 }

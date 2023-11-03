@@ -14,5 +14,7 @@ namespace Repository.IRepository
         public bool UpdateWashingMachine(WashingMachine washingMachine, int washingMachineId);
         public bool DeleteWashingMachine(int washingMachineId);
         public WashingMachine GetWashingMachineById(int washingMachineId);
+
+        public IList<WashingMachine> GetWashingMachinesByStoreId(int storeId);
     }
 }

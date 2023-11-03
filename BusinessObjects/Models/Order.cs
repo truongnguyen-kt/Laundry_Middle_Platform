@@ -21,5 +21,16 @@ namespace BusinessObjects.Models
         public virtual User? Customer { get; set; }
         public virtual Store? Store { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+
+        public Order(DateTime StartDateTime, DateTime FinishDateTime, double? TotalVolume, bool? OrderStatus,
+            int CustomerId, int StoreId)
+        {
+            this.StartDateTime = StartDateTime;
+            this.FinishDateTime = FinishDateTime;
+            this.TotalVolume = TotalVolume;
+            this.OrderStatus = OrderStatus;
+            this.CustomerId = CustomerId;
+            this.StoreId = StoreId;
+        }
     }
 }

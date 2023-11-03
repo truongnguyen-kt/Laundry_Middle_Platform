@@ -27,6 +27,7 @@ namespace LaundryMidlePlatform.Pages.CustomerHomePage
 
         private IStoreRepository storeRepository = new StoreRepository();
         public IList<Store> Store { get; set; } = default!;
+
         public void OnGet()
         {
             string email = HttpContext.Session.GetString("customerEmail");
@@ -37,5 +38,15 @@ namespace LaundryMidlePlatform.Pages.CustomerHomePage
             }
             Store = storeRepository.GetAllStores();
         }
+
+        [BindProperty]
+        public string SelectedStoreId { get; set; } = default!;
+
+        //public IActionResult OnPost(int storeId) // Add storeId as a parameter
+        //{
+        //    // Use storeId here
+        //    // You can pass it to the next page if needed
+        //    //return RedirectToPage("/CustomerHomePage/OrderPage/CustomerMakeOrderDetail", new { storeId = SelectedStoreId });
+        //}
     }
 }

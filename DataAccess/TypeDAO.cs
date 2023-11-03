@@ -1,4 +1,5 @@
 ﻿using BusinessObjects.Models;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -106,6 +107,21 @@ namespace DataAccess
                 throw new Exception(ex.Message);
             }
             return check;
+        }
+
+        public BusinessObjects.Models.Type findTypeByName(string name)
+        {
+            BusinessObjects.Models.Type type = null;
+            try
+            {
+                var Dbcontext = new LaundryMiddlePlatformContext();
+                type = Dbcontext.Types.FirstOrDefault(o => o.TypeName.ToUpper().Equals(name.ToUpper()));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return type;
         }
     }
 }
