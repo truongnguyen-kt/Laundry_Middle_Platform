@@ -5,46 +5,67 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Timeline</title>
-</head>
-<body>
-    <h1>Order Timeline</h1>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .text-center {
+            text-align: center;
+        }
 
-    <form method="post">
-        <div class="card-body" >
-            <div class="form-group">
-                <label class="col-md-6" asp-for="CustomerName">Customer Name:</label>
-                <div class="">
-                    <input asp-for="CustomerName" class="form-control" />
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .label-div-inline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body class="text-center">
+    <div class="center">
+        <form method="post" style="text-align: center;">
+            <div class="card-body">
+                <div class="form-group row label-div-inline">
+                    <label class="col-md-6 col-form-label text-md-right" asp-for="CustomerName">Customer Name:</label>
+                    <div class="col-md-6">
+                        <input asp-for="CustomerName" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row label-div-inline">
+                    <label class="col-md-6 col-form-label text-md-right" asp-for="OrderID">Order ID:</label>
+                    <div class="col-md-6">
+                        <input asp-for="OrderID" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row label-div-inline">
+                    <label class="col-md-6 col-form-label text-md-right" asp-for="OrderPrice">Order Price:</label>
+                    <div class="col-md-6">
+                        <input asp-for="OrderPrice" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row label-div-inline">
+                    <label class="col-md-6 col-form-label text-md-right" asp-for="StartTime">Start Time:</label>
+                    <div class="col-md-6">
+                        <input asp-for="StartTime" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group row label-div-inline">
+                    <label class="col-md-6 col-form-label text-md-right" asp-for="EndTime">End Time:</label>
+                    <div class="col-md-6">
+                        <input asp-for="EndTime" class="form-control" />
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-md-6" asp-for="OrderID">Order ID:</label>
-                <div class="">
-                    <input asp-for="OrderID" class="form-control" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-6" asp-for="OrderPrice">Order Price:</label>
-                <div class="">
-                    <input asp-for="OrderPrice" class="form-control" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-6" asp-for="StartTime">Start Time:</label>
-                <div class="">
-                    <input asp-for="StartTime" class="form-control" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-6" asp-for="EndTime">End Time:</label>
-                <div class="">
-                    <input asp-for="EndTime" class="form-control" />
-                </div>
-            </div>
-        </div>
-        <button type="submit">Submit</button>
-        <button type="button">Cancel</button>
-    </form>
+            <button type="Order" style="text-align: center;" class="btn btn-primary mx-auto">Order</button>
+            <button type="Cancel" style="text-align: center;"  class="btn btn-secondary mx-auto">Cancel</button>
+        </form>
+    </div>
 </body>
 </html>

@@ -2,53 +2,52 @@
 @model LaundryMidlePlatform.Pages.CustomerHomePage.OrderPage.CustomerMakeOrderDetailModel
 @{
 }
-
 <!DOCTYPE html>
-
 <html>
 <head>
     <title>Example.cshtml</title>
-    @* <script>
-        function showConfirm() {
-            var shirts = document.getelementbyid("shirts").value || "n/a";
-            var pants = document.getelementbyid("pants").value || "n/a";
-            var otheraccessories = document.getelementbyid("other_accessories").value || "n/a";
-            var confirmationmessage = "confirm: \nshirts: " + shirts + "\npants: " + pants + "\nother accessories: " + otheraccessories;
-            var result = confirm(confirmationmessage);
-
-            // if (result) {
-            //     window.location.href = "https://localhost:7176/CustomerHomePage/OrderPage/OrderTimeLine";
-            // }
-            return result;
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .text-center {
+            text-align: center;
         }
-    </script> *@
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
-<body>
-    <form method="post">
-        <div class="card-body" >
-            <div class="form-group">
-                <label class="col-md-6" asp-for="Shirts">SHIRTS:</label>
-                <div class="">
-                    <input asp-for="Shirts" class="form-control" />
+<body class="text-center">
+    <div class="center">
+        <form method="post" style="text-align: center;">
+            <div class="card-body">
+                <div class="form-group row">
+                    <label class="col-md-6 col-form-label text-md-right" asp-for="Shirts">SHIRTS:</label>
+                    <div class="col-md-6">
+                        <input asp-for="Shirts" class="form-control" />
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-6" asp-for="Pants">PANTS:</label>
-                <div class="">
-                    <input asp-for="Pants" class="form-control" />
+                <div class="form-group row">
+                    <label class="col-md-6 col-form-label text-md-right" asp-for="Pants">PANTS:</label>
+                    <div class="col-md-6">
+                        <input asp-for="Pants" class="form-control" />
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-6" asp-for="Other_Accessories">OTHER ACCESSORIES:</label>
-                <div class="">
-                    <input asp-for="Other_Accessories" class="form-control" />
+                <div class="form-group row">
+                    <label class="col-md-6 col-form-label text-md-right" asp-for="Other_Accessories">OTHER ACCESSORIES:</label>
+                    <div class="col-md-6">
+                        <input asp-for="Other_Accessories" class="form-control" />
+                    </div>
                 </div>
+                <input type="hidden" asp-for="storeId" />
+                <input type="hidden" asp-for="Email" />
             </div>
-             <input type="hidden" asp-for="storeId" />
-            <input type="hidden" asp-for="Email" />
-        </div>
-        <button type="submit">Submit</button>
-    </form>
+            <button type="submit" class="btn btn-primary mx-auto" style="text-align: center;">Submit</button>
+        </form>
+    </div>
+
     @if (!string.IsNullOrEmpty(Model.Error))
     {
         <p class="text-center" style="margin: 12px 0;">
@@ -61,6 +60,6 @@
             <span style="color:green;"> @Model.Success</span>
         </p>
     }
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

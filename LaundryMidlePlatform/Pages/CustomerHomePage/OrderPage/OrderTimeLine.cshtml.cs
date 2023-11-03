@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Repository.Implements;
+using BusinessObjects;
 
 namespace LaundryMidlePlatform.Pages.CustomerHomePage.OrderPage
 {
@@ -23,26 +24,37 @@ namespace LaundryMidlePlatform.Pages.CustomerHomePage.OrderPage
         private IOrderDetailRepository orderDetailRepository = new OrderDetailRepository();
         private IOrderRepository orderRepository = new OrderRepository();
         private IMakeOrderDetail makeOrderDetail = new MakeOrderDetail();
+
         [BindProperty]
         public Order Orders { get; set; }
 
         [BindProperty]
         public String CustomerName { get; set; }
+
+        [BindProperty]
         public String OrderID { get; set; }
+
+        [BindProperty]
         public String OrderPrice { get; set; }
+
+        [BindProperty]
         public String StartTime { get; set; }
+
+        [BindProperty]
         public String EndTime { get; set; }
 
 
         public void OnGet(int OrderId)
         {
             Console.WriteLine("Order Id" + OrderId);
+            OrderInvoice orderInvoice = makeOrderDetail.CalculateOrderTimeLine(OrderId);
             Orders = orderRepository.findOrderById(OrderId);
             CustomerName = userRepository.GetUserById((int)Orders.CustomerId).FirstName + " " + userRepository.GetUserById((int)Orders.CustomerId).LastName;
             OrderID = Orders.OrderId.ToString();
-            OrderPrice = Orders.TotalPrice.ToString();
-            StartTime = Orders.StartDateTime.ToString();
-            EndTime = Orders.FinishDateTime.ToString();
+            OrderPrice = orderInvoice.totalPrice.ToString();
+            StartTime = orderInvoice.startDateTime.ToString();
+            EndTime = orderInvoice.finishDateTime.ToString();
+
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using BusinessObjects.Models;
+﻿using BusinessObjects;
+using BusinessObjects.Models;
 using Microsoft.AspNetCore.Razor.Language.Intermediate;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Repository.Interface;
@@ -6,8 +7,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
+
 namespace Repository.Implements
 {
     public class MakeOrderDetail : IMakeOrderDetail
@@ -51,68 +55,93 @@ namespace Repository.Implements
             return newOrder.OrderId;
         }
 
-        private double findTheClosetKg(double customer_kg, IList<double> listPerformancesMachine, HashSet<double> unorderedset)
+        private Tuple<int, double> findTheClosetKg(double customer_kg, List<Tuple<int, double>> listPerformancesMachine, HashSet<Tuple<int, double>> unorderedset)
         {
             double maxCloset = double.MaxValue;
             double minCloset = double.MinValue;
+            Tuple<int, double> maxTuple = null;
+            Tuple<int, double> minTuple = null; 
 
             for (int i = 0; i < listPerformancesMachine.Count; i++)
             {
-                if (listPerformancesMachine[i] >= customer_kg && listPerformancesMachine[i] < maxCloset
+                if (listPerformancesMachine[i].Item2 >= customer_kg && listPerformancesMachine[i].Item2 < maxCloset
                     && !unorderedset.Contains(listPerformancesMachine[i]))
                 {
-                    maxCloset = listPerformancesMachine[i];
+                    maxCloset = listPerformancesMachine[i].Item2;
+                    maxTuple = listPerformancesMachine[i];
                 }
 
-                if (listPerformancesMachine[i] < customer_kg && listPerformancesMachine[i] > minCloset
+                if (listPerformancesMachine[i].Item2 < customer_kg && listPerformancesMachine[i].Item2 > minCloset
                     && !unorderedset.Contains(listPerformancesMachine[i]))
                 {
-                    minCloset = listPerformancesMachine[i];
+                    minCloset = listPerformancesMachine[i].Item2;
+                    minTuple = listPerformancesMachine[i];
                 }
             }
             if (maxCloset != double.MaxValue)
             {
-                unorderedset.Add(maxCloset);
-                return maxCloset;
+                unorderedset.Add(maxTuple);
+                return maxTuple;
             }
             if (minCloset != double.MinValue)
             {
-                unorderedset.Add(minCloset);
-                return minCloset;
+                unorderedset.Add(minTuple);
+                return minTuple;
             }
-            return -1;
+            return null;
         }
 
-        public void CalculateOrderTimeLine(int orderId)
+        private DateTime calculateNewEndTime(DateTime oldFinishDateTime, int hours)
+        {
+            int oldYear = oldFinishDateTime.Year;
+            int oldMonth = oldFinishDateTime.Month;
+            int oldDay = oldFinishDateTime.Day;
+            int oldHour = oldFinishDateTime.Hour + hours;
+            int oldMinute = oldFinishDateTime.Minute;
+            int oldSecond = oldFinishDateTime.Second;
+            int oldMillisecond = oldFinishDateTime.Millisecond;
+
+            return new DateTime(oldYear, oldMonth, oldDay, oldHour, oldMinute, oldSecond, oldMillisecond);
+        }
+
+        public OrderInvoice CalculateOrderTimeLine(int orderId)
         {
             Order order = orderRepository.findOrderById(orderId);
             if (order != null)
             {
                 int store_id = (int)order.StoreId;
 
-                Store store = storeRepository.GetStoreById(store_id); // Get the Store in which order you want to landuary
+                Store store = storeRepository.GetStoreById(store_id); 
 
-                IList<WashingMachine> washingMachines = machineRepository.GetWashingMachinesByStoreId(store_id); // Get list of machine with the performance per one machines
-                IList<OrderDetail> orderDetails = orderDetailRepository.findAllOrderDetailsByOrderId(orderId); // Get list of OrderDetail Requirements
+                IList<WashingMachine> washingMachines = machineRepository.GetWashingMachinesByStoreId(store_id);
+                IList<OrderDetail> orderDetails = orderDetailRepository.findAllOrderDetailsByOrderId(orderId);
 
-                IList<double> listPerformancesMachine = washingMachines
-                                    .Select(wm => wm.Performmance)
-                                    .ToList();  // Get All Performance of Machine in one Store
+                // store Machine Id, Machine Performance
+                List<Tuple<int, double>> listPerformancesMachine = new List<Tuple<int, double>>();
 
+                foreach (WashingMachine washingMachine in washingMachines)
+                {
+                    listPerformancesMachine.Add(new Tuple<int, double>(washingMachine.MachineId, washingMachine.Performmance));
+                }
+
+                
                 IList<double> listRequireCustomer = orderDetails
                                     .Select(od => od.Volume.HasValue ? od.Volume.Value : 0)
                                     .ToList();
 
-                listPerformancesMachine.OrderBy(x => x).ToList(); 
-                listRequireCustomer.OrderBy(x => x).ToList();
-                HashSet<Double> unorderedset = new HashSet<double>();
+                // sort performance by ascending 
+                listPerformancesMachine.Sort((x, y) => x.Item2.CompareTo(y.Item2));
+                listRequireCustomer = listRequireCustomer.OrderBy(x => x).ToList();
+                HashSet<Tuple<int, double>> unorderedset = new HashSet<Tuple<int, double>>();
+                double totalCustomerKg = listRequireCustomer.Sum();
+                double totalPrice = (double)totalCustomerKg * (double)store.Price;
 
                 bool check1 = true;
                 int n1 = listPerformancesMachine.Count - 1;
                 int m1 = listRequireCustomer.Count - 1;
                 while (n1 >= 0 && m1 >= 0)
                 {
-                    if (listPerformancesMachine[n1] > listRequireCustomer[m1])
+                    if (listPerformancesMachine[n1].Item2 > listRequireCustomer[m1])
                     {
                         check1 = false;
                         break;
@@ -120,35 +149,64 @@ namespace Repository.Implements
                     n1--;
                     m1--;
                 }
-                IList<Tuple<Double, Double>> result = new List<Tuple<Double, Double>>();
-                if (check1) // trong qua trinh duyet qua tung phan tu k co gia tri nao cua customer > store
+                List<DateTime> listDate = new List<DateTime>();
+                List<Tuple<int, Tuple<double, double>>> result = new List<Tuple<int, Tuple<double, double>>>();
+                DateTime maxDateTime;
+                //result use to store machineId, store Performance of Machine and store Kg of Customer
+                if (check1) 
                 {
 
                     int n2 = listPerformancesMachine.Count - 1;
                     int m2 = listRequireCustomer.Count - 1;
                     while (n2 >= 0 && m2 >= 0)
                     {
-                        result.Add(new Tuple<double, double>(listPerformancesMachine[n2], listPerformancesMachine[m2]));
-                        n1--;
-                        m1--;
+                        Tuple<double, double> pair_kg = new Tuple<double, double>(listPerformancesMachine[n2].Item2, listRequireCustomer[m2]);
+                        Tuple<int, Tuple<double, double>> store_data = new Tuple<int, Tuple<double, double>>(listPerformancesMachine[n2].Item1, pair_kg);
+                        result.Add(store_data);
+                        n2--;
+                        m2--;
                     }
                     result.Reverse();
-                    foreach(Tuple<Double, Double> kg in result)
+                   
+                    foreach(Tuple<int, Tuple<double, double>> res in result)
                     {
-                        Console.WriteLine("Store Kg: " + kg.Item1 + " Customer Kg:" + kg.Item2);
+                        int hours = (int)Math.Ceiling(res.Item2.Item2 / res.Item2.Item1);
+                        DateTime oldFinishDateTime = order.FinishDateTime;
+                        DateTime newFinishDateTime = calculateNewEndTime(oldFinishDateTime, hours);
+                        listDate.Add(newFinishDateTime);
+
+                        Console.WriteLine("Machine Id: " + res.Item1 + 
+                            " Performance Machine : " + res.Item2.Item1 + 
+                            " Customer Kg: " + res.Item2.Item2 +
+                            " Time for Laundry: " + hours + 
+                            " Old FinishDateTime: " + oldFinishDateTime +
+                            " New FinishDateTime: " + newFinishDateTime);
+
                     }
+                    maxDateTime = listDate.Max();
                 }
                 else
                 {
                     foreach(double customer_kg in listRequireCustomer)
                     {
-                        double ClosetKg = findTheClosetKg(customer_kg, listPerformancesMachine, unorderedset);
-                        Console.WriteLine("Store Kg: " + ClosetKg + " Customer Kg:" + customer_kg);
-                    }
-                }
-                
+                        Tuple<int, double> machine = findTheClosetKg(customer_kg, listPerformancesMachine, unorderedset);
+                        int hours = (int)Math.Ceiling(customer_kg / machine.Item2);
+                        DateTime oldFinishDateTime = order.FinishDateTime;
+                        DateTime newFinishDateTime = calculateNewEndTime(oldFinishDateTime, hours);
+                        listDate.Add(newFinishDateTime);
 
+                        Console.WriteLine("Machine Id: " + machine.Item1 +
+                           " Performance Machine : " + machine.Item2 +
+                           " Customer Kg: " + customer_kg +
+                           " Time for Laundry: " + hours +
+                           " Old FinishDateTime: " + oldFinishDateTime +
+                           " New FinishDateTime: " + newFinishDateTime);
+                    }
+                    maxDateTime = listDate.Max();
+                }
+                return new OrderInvoice(orderId, order.StartDateTime, maxDateTime, totalPrice);
             }
+            return new OrderInvoice();
         }
 
     }
