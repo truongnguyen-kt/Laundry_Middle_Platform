@@ -1,4 +1,6 @@
 ﻿@page
+@using BusinessObjects.Models;
+@using LaundryMidlePlatform.Pages.SessionHelpers;
 @model LaundryMidlePlatform.Pages.Stores.IndexModel
 
 @{
@@ -6,6 +8,19 @@
     Layout = "Shared/_AdminLayout";
 
 }
+@{
+    ViewData["Title"] = "Admin";
+    var admin = SessionHelper.GetObjectFromJson<User>(HttpContext.Session, "admin");
+
+    if (admin == null)
+    {
+        Layout = "Shared/_AdminError";
+        return;
+
+    }
+}
+
+
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">

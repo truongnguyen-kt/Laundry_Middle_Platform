@@ -1,10 +1,23 @@
 ﻿@page
+@using BusinessObjects.Models;
+@using LaundryMidlePlatform.Pages.SessionHelpers;
 @model LaundryMidlePlatform.Pages.Stores.CreateModel
 
 @{
     ViewData["Title"] = "Create";
     Layout = "Shared/_AdminLayout";
 
+}
+@{
+    ViewData["Title"] = "Admin";
+    var admin = SessionHelper.GetObjectFromJson<User>(HttpContext.Session, "admin");
+
+    if (admin == null)
+    {
+        Layout = "Shared/_AdminError";
+        return;
+
+    }
 }
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">

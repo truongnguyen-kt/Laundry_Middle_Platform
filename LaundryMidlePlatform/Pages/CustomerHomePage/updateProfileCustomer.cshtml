@@ -1,8 +1,20 @@
 ﻿@page
+@using BusinessObjects.Models;
+@using LaundryMidlePlatform.Pages.SessionHelpers;
 @model LaundryMidlePlatform.Pages.CustomerHomePage.updateProfileCustomerModel
 @{
 }
 
+@{
+    ViewData["Title"] = "Customer";
+    var customer = SessionHelper.GetObjectFromJson<User>(HttpContext.Session, "customer");
+
+    if (customer == null)
+    {
+        Layout = "Shared/_AdminError";
+        return;
+    }
+}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +33,7 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="User.UserId" />
+            <input type="hidden" asp-for="User.RoleId" />
             <div class="card overflow-hidden">
                 <div class="row no-gutters row-bordered row-border-light">
                     <div class="col-md-3 pt-0">

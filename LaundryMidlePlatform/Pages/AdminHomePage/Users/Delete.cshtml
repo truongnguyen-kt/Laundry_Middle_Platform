@@ -1,10 +1,23 @@
 ﻿@page
+@using BusinessObjects.Models;
+@using LaundryMidlePlatform.Pages.SessionHelpers;
 @model LaundryMidlePlatform.Pages.Users.DeleteModel
 
 @{
     ViewData["Title"] = "Delete";
     Layout = "Shared/_AdminLayout";
 
+}
+@{
+    ViewData["Title"] = "Admin";
+    var admin = SessionHelper.GetObjectFromJson<User>(HttpContext.Session, "admin");
+
+    if (admin == null)
+    {
+        Layout = "Shared/_AdminError";
+        return;
+
+    }
 }
 
 <h1>Delete</h1>

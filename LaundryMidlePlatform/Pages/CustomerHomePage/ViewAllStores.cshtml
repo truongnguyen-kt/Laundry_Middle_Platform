@@ -1,8 +1,20 @@
 ﻿@page
+@using BusinessObjects.Models;
+@using LaundryMidlePlatform.Pages.SessionHelpers;
 @model LaundryMidlePlatform.Pages.CustomerHomePage.ViewAllStoresModel
 @{
 }
 
+@{
+    ViewData["Title"] = "Customer";
+    var customer = SessionHelper.GetObjectFromJson<User>(HttpContext.Session, "customer");
+
+    if (customer == null )
+    {
+        Layout = "Shared/_AdminError";
+        return;
+    }
+}
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />

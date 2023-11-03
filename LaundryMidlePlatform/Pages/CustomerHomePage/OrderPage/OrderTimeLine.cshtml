@@ -1,6 +1,18 @@
 ﻿@page
+@using BusinessObjects.Models;
+@using LaundryMidlePlatform.Pages.SessionHelpers;
 @model LaundryMidlePlatform.Pages.CustomerHomePage.OrderPage.OrderTimeLineModel
 @{
+}
+@{
+    ViewData["Title"] = "Customer";
+    var customer = SessionHelper.GetObjectFromJson<User>(HttpContext.Session, "customer");
+
+    if (customer == null )
+    {
+        Layout = "Shared/_AdminError";
+        return;
+    }
 }
 <!DOCTYPE html>
 <html>
