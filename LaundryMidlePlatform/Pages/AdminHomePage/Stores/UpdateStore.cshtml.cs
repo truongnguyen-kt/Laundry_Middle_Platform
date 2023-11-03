@@ -92,11 +92,7 @@ namespace LaundryMidlePlatform.Pages.Stores
                 ModelState.AddModelError("Store.Address", "Address cannot null");
                 isValid = false;
             }
-            else if (Regex.IsMatch(Store.Address, @"\s"))
-            {
-                ModelState.AddModelError("Store.Address", "StoreAddress cannot contain spaces");
-                isValid = false;
-            }
+            
             
             /*else
             {
@@ -120,11 +116,7 @@ namespace LaundryMidlePlatform.Pages.Stores
                 ModelState.AddModelError("(Store.StoreName.", "Name cannot null");
                 isValid = false;
             }
-            else if (Regex.IsMatch(Store.StoreName, @"\s"))
-            {
-                ModelState.AddModelError("Store.StoreName", "Name cannot contain spaces");
-                isValid = false;
-            }
+            
 
             if (Store.Status == null)
             {

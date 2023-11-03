@@ -9,6 +9,7 @@ using BusinessObjects.Models;
 using Repository.Interface;
 using System.Text.RegularExpressions;
 using Repository.Implements;
+using Validation;
 
 namespace LaundryMidlePlatform.Pages.Users
 {
@@ -66,6 +67,7 @@ namespace LaundryMidlePlatform.Pages.Users
         private bool ValidateInputs()
         {
             var isValid = true;
+            Utils utils = new Utils();
 
             if (string.IsNullOrEmpty(User.Email))
             {
@@ -106,6 +108,10 @@ namespace LaundryMidlePlatform.Pages.Users
                 {
                     ModelState.AddModelError("User.Phone", "Phone must contain only numeric digits (0-9)");
                     isValid = false;
+                }else if(!utils.checkTelephoneFormat(User.Phone))
+                {
+                    ModelState.AddModelError("User.Phone", "Phone must has length from 10 to 13!");
+                    isValid = false;
                 }
             }
 
@@ -114,11 +120,7 @@ namespace LaundryMidlePlatform.Pages.Users
                 ModelState.AddModelError("User.Address", "Address cannot null");
                 isValid = false;
             }
-            else if (Regex.IsMatch(User.Address, @"\s"))
-            {
-                ModelState.AddModelError("User.Address", "Address cannot contain spaces");
-                isValid = false;
-            }
+            
 
             if (User.DateOfBirth == DateTime.MinValue)
             {

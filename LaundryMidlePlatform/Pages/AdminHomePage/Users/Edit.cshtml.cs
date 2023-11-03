@@ -10,6 +10,7 @@ using BusinessObjects.Models;
 using Repository.Implements;
 using Repository.Interface;
 using System.Text.RegularExpressions;
+using Validation;
 
 namespace LaundryMidlePlatform.Pages.Users
 {
@@ -86,6 +87,7 @@ namespace LaundryMidlePlatform.Pages.Users
         }
         private bool ValidateInputs()
         {
+            Utils utils = new Utils();
             var isValid = true;
 
             if (string.IsNullOrEmpty(User.Email))
@@ -126,10 +128,24 @@ namespace LaundryMidlePlatform.Pages.Users
                 ModelState.AddModelError("User.Address", "Address cannot null");
                 isValid = false;
             }
-            else if (Regex.IsMatch(User.Address, @"\s"))
+            if (string.IsNullOrEmpty(User.Phone))
             {
-                ModelState.AddModelError("User.Address", "Address cannot contain spaces");
+                ModelState.AddModelError("(User.Phone.", "Phone cannot null");
                 isValid = false;
+            }
+            else
+            {
+                // Kiểm tra xem giá trị Phone chỉ chứa ký tự số từ 0 đến 9
+                if (!Regex.IsMatch(User.Phone, "^[0-9]+$"))
+                {
+                    ModelState.AddModelError("User.Phone", "Phone must contain only numeric digits (0-9)");
+                    isValid = false;
+                }
+                else if (!utils.checkTelephoneFormat(User.Phone))
+                {
+                    ModelState.AddModelError("User.Phone", "Phone must has length from 10 to 13!");
+                    isValid = false;
+                }
             }
 
             if (User.DateOfBirth == DateTime.MinValue)

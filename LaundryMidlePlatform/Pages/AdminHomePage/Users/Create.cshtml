@@ -49,21 +49,21 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="User.FirstName" class="control-label"></label>
-                <input asp-for="User.FirstName" class="form-control" />
+                <input asp-for="User.FirstName" class="form-control" required/>
                 <span asp-validation-for="User.FirstName" class="text-danger"></span>
             </div>
             <div class="row">
                 <div class="col-md-6" >
                     <div class="form-group">
                         <label asp-for="User.LastName" class="control-label"></label>
-                        <input asp-for="User.LastName" class="form-control" />
+                        <input asp-for="User.LastName" class="form-control" required />
                         <span asp-validation-for="User.LastName" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-md-6" >
                     <div class="form-group">
                         <label asp-for="User.Email" class="control-label"></label>
-                        <input asp-for="User.Email" class="form-control" />
+                        <input asp-for="User.Email" class="form-control" required />
                         <span asp-validation-for="User.Email" class="text-danger"></span>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                                     <i class="fas fa-phone " ></i> <!-- Sử dụng Font Awesome biểu tượng số điện thoại -->
                                 </span>
                             </div>
-                            <input asp-for="User.Phone" class="form-control" />
+                            <input asp-for="User.Phone" class="form-control" required />
                         </div>
                         <span asp-validation-for="User.Phone" class="text-danger"></span>
                     </div>
@@ -93,7 +93,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label asp-for="User.Password" class="control-label"></label>
-                        <input asp-for="User.Password" class="form-control" />
+                        <input asp-for="User.Password" class="form-control" required />
                         <span asp-validation-for="User.Password" class="text-danger"></span>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label asp-for="User.Address" class="control-label"></label>
-                        <input asp-for="User.Address" class="form-control" />
+                        <input asp-for="User.Address" class="form-control" required />
                         <span asp-validation-for="User.Address" class="text-danger"></span>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label asp-for="User.DateOfBirth" class="control-label"></label>
-                        <input asp-for="User.DateOfBirth" class="form-control" />
+                        <input asp-for="User.DateOfBirth" class="form-control" required/>
                         <span asp-validation-for="User.DateOfBirth" class="text-danger"></span>
                     </div>
                 </div>
@@ -129,8 +129,8 @@
                     <div class="form-group">
                         <label asp-for="User.RoleId" class="control-label"></label>
                         <select asp-for="User.RoleId" class="form-control">
-                            <option value=1>Guest</option>
-                            <option value=2>Store</option>
+                            <option value=2>Guest</option>
+                            <option value=3>Store</option>
                         </select>
                         <span asp-validation-for="User.RoleId" class="text-danger"></span>
                     </div>
