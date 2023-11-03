@@ -2,3 +2,49 @@
 @model LaundryMidlePlatform.Pages.CustomerHomePage.OrderPage.OrderTimeLineModel
 @{
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Timeline</title>
+</head>
+<body>
+    <h1>Order Timeline</h1>
+
+    <form method="post">
+        <div class="card-body" >
+            <div class="form-group">
+                <label class="col-md-6" asp-for="CustomerName">Customer Name:</label>
+                <div class="">
+                    <input asp-for="CustomerName" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-6" asp-for="OrderID">Order ID:</label>
+                <div class="">
+                    <input asp-for="OrderID" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-6" asp-for="OrderPrice">Order Price:</label>
+                <div class="">
+                    <input asp-for="OrderPrice" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-6" asp-for="StartTime">Start Time:</label>
+                <div class="">
+                    <input asp-for="StartTime" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-6" asp-for="EndTime">End Time:</label>
+                <div class="">
+                    <input asp-for="EndTime" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+        <button type="button">Cancel</button>
+    </form>
+</body>
+</html>

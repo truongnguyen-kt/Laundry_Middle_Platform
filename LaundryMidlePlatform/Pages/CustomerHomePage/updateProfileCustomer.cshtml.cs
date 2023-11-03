@@ -10,7 +10,7 @@ using Repository.IRepository;
 using Repository.Implements;
 using Repository.Interface;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Repository.Implement;
+using Repository.Implements;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
 using Validation;
 

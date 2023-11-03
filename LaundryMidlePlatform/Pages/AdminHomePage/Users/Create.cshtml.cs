@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using BusinessObjects.Models;
-using Repository.Implement;
 using Repository.Interface;
 using System.Text.RegularExpressions;
+using Repository.Implements;
 
 namespace LaundryMidlePlatform.Pages.Users
 {

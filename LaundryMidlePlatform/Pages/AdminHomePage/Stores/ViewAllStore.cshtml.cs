@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BusinessObjects.Models;
-using Repository.Implement;
 using Repository.Interface;
 using Repository.IRepository;
 using Repository.Implements;

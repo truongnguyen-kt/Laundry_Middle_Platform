@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Repository.Implement;
+using Repository.Implements;
 using Repository.Interface;
 using Validation;
 

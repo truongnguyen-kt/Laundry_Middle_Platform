@@ -25,14 +25,6 @@ namespace BusinessObjects.Models
         public virtual DbSet<User> Users { get; set; } = null!;
         public virtual DbSet<WashingMachine> WashingMachines { get; set; } = null!;
 
-        //        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //        {
-        //            if (!optionsBuilder.IsConfigured)
-        //            {
-        //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        //                optionsBuilder.UseSqlServer("server =(local); database =Laundry Middle Platform;uid=sa;pwd=12345;");
-        //            }
-        //        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder.UseSqlServer(getConnectionString());
 
         private String getConnectionString()
@@ -58,7 +50,9 @@ namespace BusinessObjects.Models
                     .HasColumnType("datetime")
                     .HasColumnName("finishDateTime");
 
-                entity.Property(e => e.OrderStatus).HasColumnName("orderStatus");
+                entity.Property(e => e.OrderStatus)
+                    .HasMaxLength(255)
+                    .HasColumnName("orderStatus");
 
                 entity.Property(e => e.StartDateTime)
                     .HasColumnType("datetime")
@@ -66,17 +60,17 @@ namespace BusinessObjects.Models
 
                 entity.Property(e => e.StoreId).HasColumnName("storeID");
 
-                entity.Property(e => e.TotalVolume).HasColumnName("totalVolume");
+                entity.Property(e => e.TotalPrice).HasColumnName("totalPrice");
 
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.CustomerId)
-                    .HasConstraintName("FK__ORDER__customerI__2D27B809");
+                    .HasConstraintName("FK__ORDER__customerI__2E1BDC42");
 
                 entity.HasOne(d => d.Store)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.StoreId)
-                    .HasConstraintName("FK__ORDER__storeID__2E1BDC42");
+                    .HasConstraintName("FK__ORDER__storeID__2F10007B");
             });
 
             modelBuilder.Entity<OrderDetail>(entity =>
@@ -84,8 +78,6 @@ namespace BusinessObjects.Models
                 entity.ToTable("ORDER DETAILS");
 
                 entity.Property(e => e.OrderDetailId).HasColumnName("orderDetailID");
-
-                entity.Property(e => e.OrderDetailStatus).HasColumnName("orderDetailStatus");
 
                 entity.Property(e => e.OrderId).HasColumnName("orderID");
 
@@ -96,12 +88,12 @@ namespace BusinessObjects.Models
                 entity.HasOne(d => d.Order)
                     .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.OrderId)
-                    .HasConstraintName("FK__ORDER DET__order__32E0915F");
+                    .HasConstraintName("FK__ORDER DET__order__33D4B598");
 
                 entity.HasOne(d => d.Type)
                     .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.TypeId)
-                    .HasConstraintName("FK__ORDER DET__typeI__33D4B598");
+                    .HasConstraintName("FK__ORDER DET__typeI__34C8D9D1");
             });
 
             modelBuilder.Entity<Role>(entity =>
@@ -119,7 +111,9 @@ namespace BusinessObjects.Models
             {
                 entity.ToTable("STORE");
 
-                entity.Property(e => e.StoreId).HasColumnName("storeID");
+                entity.Property(e => e.StoreId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("storeID");
 
                 entity.Property(e => e.Address)
                     .HasMaxLength(100)
@@ -198,7 +192,7 @@ namespace BusinessObjects.Models
             modelBuilder.Entity<WashingMachine>(entity =>
             {
                 entity.HasKey(e => e.MachineId)
-                    .HasName("PK__WASHING __D1ABE00D81417925");
+                    .HasName("PK__WASHING __D1ABE00DF03B92FE");
 
                 entity.ToTable("WASHING MACHINE");
 

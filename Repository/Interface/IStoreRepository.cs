@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repository.IRepository
+namespace Repository.Interface
 {
     public interface IStoreRepository
     {

@@ -2,7 +2,7 @@ using BusinessObjects.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Repository.Implement;
+using Repository.Implements;
 using Repository.Interface;
 using Repository.IRepository;
 using Validation;

@@ -1,6 +1,6 @@
 ﻿using BusinessObjects.Models;
 using DataAccess;
-using Repository.IRepository;
+using Repository.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;

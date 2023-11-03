@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BusinessObjects.Models;
-using Repository.Implement;
+using Repository.Implements;
 
 namespace LaundryMidlePlatform.Pages.Users
 {

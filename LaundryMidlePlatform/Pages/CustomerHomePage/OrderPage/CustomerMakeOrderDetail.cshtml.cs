@@ -10,7 +10,6 @@ using Repository.IRepository;
 using Repository.Implements;
 using Repository.Interface;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Repository.Implement;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
 using Validation;
 using Repository;
@@ -113,8 +112,8 @@ namespace LaundryMidlePlatform.Pages.CustomerHomePage.OrderPage
                 other_accessories = Double.Parse(Other_Accessories);
                 customer_kg.Add(new Tuple<String, Double>("OTHER ACCESSORIES", other_accessories));
             }
-            makeOrderDetail.storeOrderDetail(storeId, Email, customer_kg);
-            return RedirectToPage("/CustomerHomePage/OrderPage/OrderTimeLine");
+            int OrderId = makeOrderDetail.storeOrderDetail(storeId, Email, customer_kg);
+            return RedirectToPage("/CustomerHomePage/OrderPage/OrderTimeLine", new { OrderId = OrderId });
         }
     }
 }

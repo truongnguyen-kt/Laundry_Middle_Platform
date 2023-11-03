@@ -7,7 +7,7 @@ namespace BusinessObjects.Models
     {
         public int MachineId { get; set; }
         public string MachineName { get; set; } = null!;
-        public int Performmance { get; set; }
+        public double Performmance { get; set; }
         public bool? Status { get; set; }
         public int? StoreId { get; set; }
 

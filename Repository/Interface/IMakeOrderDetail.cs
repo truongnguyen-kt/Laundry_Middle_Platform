@@ -8,7 +8,7 @@ namespace Repository.Interface
 {
     public interface IMakeOrderDetail
     {
-        public void storeOrderDetail(int storeId, string customer_email, List<Tuple<String, Double>> customer_kg);
+        public int storeOrderDetail(int storeId, string customer_email, List<Tuple<String, Double>> customer_kg);
         public void CalculateOrderTimeLine(int orderId);
     }
 }

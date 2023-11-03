@@ -10,7 +10,6 @@ using Repository.IRepository;
 using Repository.Implements;
 using Repository.Interface;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Repository.Implement;
 using Validation;
 
 namespace LaundryMidlePlatform.Pages.CustomerHomePage

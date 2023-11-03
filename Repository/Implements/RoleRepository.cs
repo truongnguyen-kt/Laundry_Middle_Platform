@@ -2,7 +2,7 @@
 using DataAccess;
 using Repository.IRepository;
 
-namespace Repository.Implement
+namespace Repository.Implements
 {
     public class RoleRepository : IRoleRepository
     {
