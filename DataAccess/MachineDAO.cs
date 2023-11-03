@@ -104,5 +104,23 @@ namespace DataAccess
             }
             return washingMachine;
         }
+
+        public IList<WashingMachine> GetWashingMachinesByStoreId(int storeId)
+        {
+            IList<WashingMachine> washingMachines = null;
+            try
+            {
+                var Dbcontext = new LaundryMiddlePlatformContext();
+                washingMachines = Dbcontext.WashingMachines
+                    .Include(o => o.Store)
+                    .Where(o => o.StoreId == storeId)
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return washingMachines;
+        }
     }
 }

@@ -18,5 +18,6 @@ namespace Repository
         public bool updateOrder(Order order, int orderId) => OrderDAO.Instance.updateOrder(order, orderId);
         public bool createOrder(Order order) => OrderDAO.Instance.createOrder(order);
         public bool deleteOrder(int orderId) => OrderDAO.Instance.deleteOrder(orderId);
+        public Order findOrderByBasedOnSpecificFields(Order order) => OrderDAO.Instance.findOrderByBasedOnSpecificFields(order);
     }
 }

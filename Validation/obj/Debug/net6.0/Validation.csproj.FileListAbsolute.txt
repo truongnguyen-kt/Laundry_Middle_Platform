@@ -20,3 +20,14 @@ C:\Users\ASUS\Desktop\Test\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\V
 C:\Users\ASUS\Desktop\Test\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\refint\Validation.dll
 C:\Users\ASUS\Desktop\Test\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\Validation.pdb
 C:\Users\ASUS\Desktop\Test\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\ref\Validation.dll
+E:\Semester\Term7\PRN221\Laundry_Middle_Platform\Validation\bin\Debug\net6.0\Validation.deps.json
+E:\Semester\Term7\PRN221\Laundry_Middle_Platform\Validation\bin\Debug\net6.0\Validation.dll
+E:\Semester\Term7\PRN221\Laundry_Middle_Platform\Validation\bin\Debug\net6.0\Validation.pdb
+E:\Semester\Term7\PRN221\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\Validation.GeneratedMSBuildEditorConfig.editorconfig
+E:\Semester\Term7\PRN221\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\Validation.AssemblyInfoInputs.cache
+E:\Semester\Term7\PRN221\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\Validation.AssemblyInfo.cs
+E:\Semester\Term7\PRN221\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\Validation.csproj.CoreCompileInputs.cache
+E:\Semester\Term7\PRN221\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\Validation.dll
+E:\Semester\Term7\PRN221\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\refint\Validation.dll
+E:\Semester\Term7\PRN221\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\Validation.pdb
+E:\Semester\Term7\PRN221\Laundry_Middle_Platform\Validation\obj\Debug\net6.0\ref\Validation.dll

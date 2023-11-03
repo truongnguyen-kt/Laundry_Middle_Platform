@@ -78,9 +78,14 @@ namespace Validation
             return true;
         }
 
-        public bool CheckContainDegit(string input)
+        public bool CheckContainDigit(string input)
         {
             return input.Any(char.IsDigit);
+        }
+
+        public bool CheckContainLetter(string input)
+        {
+            return input.Any(char.IsLetter);
         }
     }
 }

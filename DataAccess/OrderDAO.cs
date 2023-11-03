@@ -122,5 +122,27 @@ namespace DataAccess
             }
             return check;
         }
+
+        public Order findOrderByBasedOnSpecificFields(Order order)
+        {
+            Order FindOrder = null;
+            try
+            {
+                var dbContext = new LaundryMiddlePlatformContext();
+                FindOrder = dbContext.Orders
+                    .FirstOrDefault(o => 
+                            o.StartDateTime == order.StartDateTime && 
+                            o.FinishDateTime == order.FinishDateTime &&
+                            o.OrderStatus == order.OrderStatus &&
+                            o.CustomerId == order.CustomerId &&
+                            o.StoreId == order.StoreId
+                            );
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return FindOrder;
+        }
     }
 }

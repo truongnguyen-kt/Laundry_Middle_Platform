@@ -17,5 +17,6 @@ namespace Repository.IRepository
         public bool updateOrder(Order order, int orderId);
         public bool createOrder(Order order);
         public bool deleteOrder(int orderId);
+        public Order findOrderByBasedOnSpecificFields(Order order);
     }
 }

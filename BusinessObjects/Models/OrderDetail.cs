@@ -13,5 +13,13 @@ namespace BusinessObjects.Models
 
         public virtual Order? Order { get; set; }
         public virtual Type? Type { get; set; }
+
+        public OrderDetail(int? orderId, int? typeId, double? volume, bool? orderDetailStatus)
+        {
+            OrderId = orderId;
+            TypeId = typeId;
+            Volume = volume;
+            OrderDetailStatus = orderDetailStatus;
+        }
     }
 }

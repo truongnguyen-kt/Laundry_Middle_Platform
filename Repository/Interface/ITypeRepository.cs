@@ -11,5 +11,7 @@ namespace Repository.Interface
         public bool updateType(BusinessObjects.Models.Type order, int orderId);
         public bool createType(BusinessObjects.Models.Type order);
         public bool deleteType(int orderId);
+
+        public BusinessObjects.Models.Type findTypeByName(string name);
     }
 }
