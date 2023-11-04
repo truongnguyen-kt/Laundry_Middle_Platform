@@ -58,7 +58,7 @@ namespace DataAccess
                 if (oldWashingMachine != null)
                 {
                     var Dbcontext = new LaundryMiddlePlatformContext();
-                    Dbcontext.Entry<WashingMachine>(oldWashingMachine).State = EntityState.Modified;
+                    Dbcontext.Entry<WashingMachine>(washingMachine).State = EntityState.Modified;
                     Dbcontext.SaveChanges();
                     check = true;
                 }

@@ -1,0 +1,50 @@
+﻿@page
+@model LaundryMidlePlatform.Pages.StoreHomePage.ManageMachine.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>WashingMachine</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="WashingMachine.MachineId" />
+            <div class="form-group">
+                <label asp-for="WashingMachine.MachineName" class="control-label"></label>
+                <input asp-for="WashingMachine.MachineName" class="form-control" />
+                <span asp-validation-for="WashingMachine.MachineName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WashingMachine.Performmance" class="control-label"></label>
+                <input asp-for="WashingMachine.Performmance" class="form-control" />
+                <span asp-validation-for="WashingMachine.Performmance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WashingMachine.Status" class="control-label"></label>
+                <input asp-for="WashingMachine.Status" class="form-control" />
+                <span asp-validation-for="WashingMachine.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WashingMachine.StoreId" class="control-label"></label>
+                <input asp-for="WashingMachine.StoreId" class="form-control" readonly />
+                <span asp-validation-for="WashingMachine.StoreId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
