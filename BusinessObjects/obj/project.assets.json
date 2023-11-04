@@ -10931,23 +10931,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Blues\\.nuget\\packages\\": {},
+    "C:\\Users\\Minh Tran\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Blues\\Desktop\\Laundry_Middle_Platform\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj",
+      "projectUniqueName": "E:\\Semester\\Term7\\PRN221\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj",
       "projectName": "BusinessObjects",
-      "projectPath": "C:\\Users\\Blues\\Desktop\\Laundry_Middle_Platform\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj",
-      "packagesPath": "C:\\Users\\Blues\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Blues\\Desktop\\Laundry_Middle_Platform\\Laundry_Middle_Platform\\BusinessObjects\\obj\\",
+      "projectPath": "E:\\Semester\\Term7\\PRN221\\Laundry_Middle_Platform\\BusinessObjects\\BusinessObjects.csproj",
+      "packagesPath": "C:\\Users\\Minh Tran\\.nuget\\packages\\",
+      "outputPath": "E:\\Semester\\Term7\\PRN221\\Laundry_Middle_Platform\\BusinessObjects\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Blues\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Minh Tran\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -11021,7 +11021,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

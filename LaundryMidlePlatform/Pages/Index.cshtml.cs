@@ -57,7 +57,7 @@ namespace LaundryMidlePlatform.Pages
                 if (user.RoleId == 3)
                 {
                     SessionHelper.SetObjectAsJson(HttpContext.Session, "store", user);
-                    return RedirectToPage("/StoreHomePage/Index");
+                    return RedirectToPage("/StoreHomePage/ManageMachine/Index");
                 }
 
                 SessionHelper.SetObjectAsJson(HttpContext.Session, "admin", user);
