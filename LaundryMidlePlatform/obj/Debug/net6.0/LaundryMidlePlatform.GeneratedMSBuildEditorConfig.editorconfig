@@ -9,153 +9,193 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LaundryMidlePlatform
 build_property.RootNamespace = LaundryMidlePlatform
-build_property.ProjectDir = E:\Semester\Term7\PRN221\Laundry_Middle_Platform\LaundryMidlePlatform\
+build_property.ProjectDir = C:\Users\Blues\Desktop\Laundry_Middle_Platform\Laundry_Middle_Platform\LaundryMidlePlatform\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = E:\Semester\Term7\PRN221\Laundry_Middle_Platform\LaundryMidlePlatform
+build_property.MSBuildProjectDirectory = C:\Users\Blues\Desktop\Laundry_Middle_Platform\Laundry_Middle_Platform\LaundryMidlePlatform
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Stores/CreateStore.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Stores/CreateStore.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxTdG9yZXNcQ3JlYXRlU3RvcmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Stores/DeleteStore.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Stores/DeleteStore.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxTdG9yZXNcRGVsZXRlU3RvcmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Stores/StoreDetails.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Stores/StoreDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxTdG9yZXNcU3RvcmVEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Stores/UpdateStore.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Stores/UpdateStore.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxTdG9yZXNcVXBkYXRlU3RvcmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Stores/ViewAllStore.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Stores/ViewAllStore.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxTdG9yZXNcVmlld0FsbFN0b3JlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Users/Create.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Users/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxVc2Vyc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Users/Delete.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Users/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxVc2Vyc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Users/Details.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Users/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxVc2Vyc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Users/Edit.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Users/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxVc2Vyc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Users/ViewAllUser.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/AdminHomePage/Users/ViewAllUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5Ib21lUGFnZVxVc2Vyc1xWaWV3QWxsVXNlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/CustomerHomePage/CustomerHomePage.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/CustomerHomePage/CustomerHomePage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJIb21lUGFnZVxDdXN0b21lckhvbWVQYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/CustomerHomePage/OrderPage/CustomerMakeOrderDetail.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/CustomerHomePage/OrderPage/CustomerMakeOrderDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJIb21lUGFnZVxPcmRlclBhZ2VcQ3VzdG9tZXJNYWtlT3JkZXJEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/CustomerHomePage/OrderPage/OrderTimeLine.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/CustomerHomePage/OrderPage/OrderTimeLine.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJIb21lUGFnZVxPcmRlclBhZ2VcT3JkZXJUaW1lTGluZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/CustomerHomePage/updateProfileCustomer.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/CustomerHomePage/updateProfileCustomer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJIb21lUGFnZVx1cGRhdGVQcm9maWxlQ3VzdG9tZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/CustomerHomePage/ViewAllStores.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/CustomerHomePage/ViewAllStores.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJIb21lUGFnZVxWaWV3QWxsU3RvcmVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/CustomerHomePage/viewOrderHistoryCustomer.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/CustomerHomePage/viewOrderHistoryCustomer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJIb21lUGFnZVx2aWV3T3JkZXJIaXN0b3J5Q3VzdG9tZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Error.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Index.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Create.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Delete.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Details.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Edit.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Index.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Orders/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Privacy.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Register/Index.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Register/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Shared/_AdminError.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Shared/_AdminError.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9BZG1pbkVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Shared/_AdminLayout.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Create.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/StoreHomePage/ManageMachine/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVIb21lUGFnZVxNYW5hZ2VNYWNoaW5lXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/StoreHomePage/ManageMachine/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVIb21lUGFnZVxNYW5hZ2VNYWNoaW5lXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/StoreHomePage/ManageMachine/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVIb21lUGFnZVxNYW5hZ2VNYWNoaW5lXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/StoreHomePage/ManageMachine/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVIb21lUGFnZVxNYW5hZ2VNYWNoaW5lXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/StoreHomePage/ManageMachine/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVIb21lUGFnZVxNYW5hZ2VNYWNoaW5lXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/StoreHomePage/ManageOrder/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVIb21lUGFnZVxNYW5hZ2VPcmRlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/StoreHomePage/ManageOrder/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVIb21lUGFnZVxNYW5hZ2VPcmRlclxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/StoreHomePage/ManageOrder/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVIb21lUGFnZVxNYW5hZ2VPcmRlclxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/StoreHomePage/ManageOrder/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVIb21lUGFnZVxNYW5hZ2VPcmRlclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/StoreHomePage/ManageOrder/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVIb21lUGFnZVxNYW5hZ2VPcmRlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHlwZVBhZ2VcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Delete.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHlwZVBhZ2VcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Details.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHlwZVBhZ2VcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Edit.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHlwZVBhZ2VcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Index.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/TypePage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHlwZVBhZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/_ViewImports.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/_ViewStart.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Shared/_Layout.cshtml]
+[C:/Users/Blues/Desktop/Laundry_Middle_Platform/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-xszxmsy13q

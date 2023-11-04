@@ -1,0 +1,57 @@
+﻿@page
+@model LaundryMidlePlatform.Pages.StoreHomePage.ManageMachine.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WashingMachine[0].MachineName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WashingMachine[0].Performmance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WashingMachine[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WashingMachine[0].Store)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.WashingMachine) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MachineName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Performmance)
+            </td>
+            <td>
+               @{
+                    string statusText = (item.Status == true) ? "READY" : "RUNNING";
+               }
+                @Html.DisplayFor(modelItem => statusText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Store.Address)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.MachineId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.MachineId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.MachineId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
