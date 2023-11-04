@@ -75,8 +75,11 @@
                     </div>
                 </div>
             </div>
-            <button type="Order" style="text-align: center;" class="btn btn-primary mx-auto">Order</button>
-            <button type="Cancel" style="text-align: center;"  class="btn btn-secondary mx-auto">Cancel</button>
+
+            <!-- Các trường dữ liệu khác -->
+            <input type="hidden" name="OrderInvoice" value="@ViewData["OrderInvoiceJson"]" />
+            <button name="submit" value="Order" type="submit" style="text-align: center;" class="btn btn-primary mx-auto">Order</button>
+            <button name="submit" value="Cancel" type="submit" style="text-align: center;" class="btn btn-secondary mx-auto">Cancel</button>
         </form>
     </div>
 </body>

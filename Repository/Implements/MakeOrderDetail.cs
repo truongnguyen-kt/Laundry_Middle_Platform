@@ -150,6 +150,7 @@ namespace Repository.Implements
                     m1--;
                 }
                 List<DateTime> listDate = new List<DateTime>();
+                List<int> listMachineId = new List<int>();
                 List<Tuple<int, Tuple<double, double>>> result = new List<Tuple<int, Tuple<double, double>>>();
                 DateTime maxDateTime;
                 //result use to store machineId, store Performance of Machine and store Kg of Customer
@@ -181,7 +182,7 @@ namespace Repository.Implements
                             " Time for Laundry: " + hours + 
                             " Old FinishDateTime: " + oldFinishDateTime +
                             " New FinishDateTime: " + newFinishDateTime);
-
+                        listMachineId.Add(res.Item1);
                     }
                     maxDateTime = listDate.Max();
                 }
@@ -201,13 +202,43 @@ namespace Repository.Implements
                            " Time for Laundry: " + hours +
                            " Old FinishDateTime: " + oldFinishDateTime +
                            " New FinishDateTime: " + newFinishDateTime);
+                        listMachineId.Add(machine.Item1);
                     }
                     maxDateTime = listDate.Max();
                 }
-                return new OrderInvoice(orderId, order.StartDateTime, maxDateTime, totalPrice);
+                return new OrderInvoice(orderId, order.StartDateTime, maxDateTime, totalPrice, store_id, listMachineId);
             }
             return new OrderInvoice();
         }
+        public void CancelOrder(int orderId)
+        {
+            Order order = orderRepository.findOrderById(orderId);
+            if (order != null)
+            {
+                order.OrderStatus = "CANCEL";
+                bool result = orderRepository.updateOrder(order, orderId);
+            }
+        }
 
+        public void OrderLaundry(OrderInvoice orderInvoice)
+        {
+            Order order = orderRepository.findOrderById(orderInvoice.orderId);
+            Store store = storeRepository.GetStoreById(orderInvoice.storeId);
+            List<int> machineID = orderInvoice.machineID;
+            if(order != null && store != null)
+            {
+                order.OrderStatus = "PROCESSING";
+                orderRepository.updateOrder(order, orderInvoice.orderId);
+                for(int i = 0; i <  machineID.Count; i++) 
+                {
+                    WashingMachine washingMachine = machineRepository.GetWashingMachineById(machineID[i]);
+                    if(washingMachine != null)
+                    {
+                        washingMachine.Status = false;
+                        machineRepository.UpdateWashingMachine(washingMachine, machineID[i]);
+                    }
+                }
+            }
+        }
     }
 }

@@ -11,5 +11,8 @@ namespace Repository.Interface
     {
         public int storeOrderDetail(int storeId, string customer_email, List<Tuple<String, Double>> customer_kg);
         public OrderInvoice CalculateOrderTimeLine(int orderId);
+
+        public void CancelOrder(int orderId);
+        public void OrderLaundry(OrderInvoice orderInvoice);
     }
 }

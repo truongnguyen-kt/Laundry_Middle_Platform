@@ -65,13 +65,13 @@ namespace DataAccess
             {
                 var dbContext = new LaundryMiddlePlatformContext();
                 oldOrder = dbContext.Orders
+                    .AsNoTracking()
                     .Include(o => o.Customer)  
                     .Include(o => o.OrderDetails)
                     .Include(o => o.Store)
-                    .FirstOrDefault(order => order.OrderId == orderId);
+                    .FirstOrDefault(o => o.OrderId == orderId);
                 if(oldOrder != null)
                 {
-                   
                     dbContext.Entry<Order>(order).State = EntityState.Modified;
                     dbContext.SaveChanges();
                     check = true;
