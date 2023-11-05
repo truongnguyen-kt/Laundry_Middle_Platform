@@ -148,20 +148,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVIb21lUGFnZVxNYW5hZ2VNYWNoaW5lXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/StoreHomePage/ManageOrder/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVIb21lUGFnZVxNYW5hZ2VPcmRlclxDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/StoreHomePage/ManageOrder/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVIb21lUGFnZVxNYW5hZ2VPcmRlclxEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/StoreHomePage/ManageOrder/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVIb21lUGFnZVxNYW5hZ2VPcmRlclxEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/StoreHomePage/ManageOrder/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RvcmVIb21lUGFnZVxNYW5hZ2VPcmRlclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Semester/Term7/PRN221/Laundry_Middle_Platform/LaundryMidlePlatform/Pages/StoreHomePage/ManageOrder/Index.cshtml]

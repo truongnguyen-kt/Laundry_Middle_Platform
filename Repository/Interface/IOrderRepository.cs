@@ -18,5 +18,10 @@ namespace Repository.Interface
         public bool createOrder(Order order);
         public bool deleteOrder(int orderId);
         public Order findOrderByBasedOnSpecificFields(Order order);
+
+        public IList<Order> findAllOrderByStoreId(int storeId);
+        public IList<Order> findAllOrderByCustomerId(int customerId);
+        public IList<Order> findAllOrderBetweenStartDateTimeAndStartEndTime(DateTime startDateTime, DateTime endDateTime);
+        public IList<Order> findAllOrderBetweenStartDateTimeAndStartEndTimeAndCustomerId(DateTime startDateTime, DateTime endDateTime, int customerId);
     }
 }

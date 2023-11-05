@@ -31,5 +31,9 @@ namespace BusinessObjects.Models
             CustomerId = customerId;
             StoreId = storeId;
         }
+        public override string ToString()
+        {
+            return $"OrderId: {OrderId}, StartDateTime: {StartDateTime}, FinishDateTime: {FinishDateTime}, TotalPrice: {TotalPrice}, OrderStatus: {OrderStatus}, CustomerId: {CustomerId}, StoreId: {StoreId}";
+        }
     }
 }

@@ -9,6 +9,7 @@ using BusinessObjects.Models;
 using Repository.Implements;
 using Microsoft.EntityFrameworkCore;
 using Repository.Interface;
+using Validation;
 
 namespace LaundryMidlePlatform.Pages.StoreHomePage.ManageMachine
 {
@@ -23,12 +24,20 @@ namespace LaundryMidlePlatform.Pages.StoreHomePage.ManageMachine
         private readonly IMachineRepository machineRepository = new MachineRepository();
         private readonly IUserRepository userRepository = new UserRepository();
         private readonly IStoreRepository storeRepository = new StoreRepository();
+        private Utils validation = new Utils();
 
 
         [BindProperty]
         public WashingMachine WashingMachine { get; set; } = default!;
         [BindProperty]
         public Store Store { get; set; } = default;
+
+        [BindProperty]
+        public string Error {  get; set; }
+
+        [BindProperty]
+        public string Success { get; set; }
+
         public IActionResult OnGet()
         {
             string email = HttpContext.Session.GetString("customerEmail");
@@ -47,10 +56,6 @@ namespace LaundryMidlePlatform.Pages.StoreHomePage.ManageMachine
                     }
                     else
                     {
-                        //List<String> s = new List<String>();
-                        //s.Add(storeRepository.GetStoreById(u.UserId).StoreName);
-                        //ViewData["StoreId"] = new SelectList(s, "StoreName");
-                        //WashingMachine.StoreId = u.UserId;
                         Store = storeRepository.GetStoreById(u.UserId);
                         return Page();
                     }
@@ -81,13 +86,30 @@ namespace LaundryMidlePlatform.Pages.StoreHomePage.ManageMachine
                     }
                     else
                     {
-                        WashingMachine.StoreId = Store.StoreId;
-                        WashingMachine.Store = storeRepository.GetStoreById((int)WashingMachine.StoreId);
-                        if (!ModelState.IsValid || WashingMachine == null)
+                        if(string.IsNullOrEmpty(WashingMachine.MachineName))
                         {
+                            Error = "Machine Name can not be null or empty. Can not create Washing Machine";
                             return Page();
                         }
-                        machineRepository.AddWashingMachine(WashingMachine);
+                        if(string.IsNullOrEmpty(WashingMachine.Performmance.ToString()))
+                        {
+                            Error = "Machine Performance can not be null or empty. Can not create Washing Machine";
+                            return Page();
+                        }
+                        if(validation.CheckContainLetter(WashingMachine.Performmance.ToString()))
+                        {
+                            Error = "Machine Performance only can contain digits. Can not create Washing Machine";
+                            return Page();
+                        }
+                        if (string.IsNullOrEmpty(WashingMachine.Status.ToString()))
+                        {
+                            Error = "Machine Status can not be null or empty. Can not create Washing Machine";
+                            return Page();
+                        }
+
+                        WashingMachine.StoreId = Store.StoreId;
+                        WashingMachine newWashingMachine = new WashingMachine(WashingMachine.MachineName, WashingMachine.Performmance, WashingMachine.Status, WashingMachine.StoreId);
+                        machineRepository.AddWashingMachine(newWashingMachine);
                         
                         //_context.WashingMachines.Add(WashingMachine);
                         //await _context.SaveChangesAsync();

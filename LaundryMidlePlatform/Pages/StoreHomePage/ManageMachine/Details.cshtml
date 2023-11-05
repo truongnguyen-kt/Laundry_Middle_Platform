@@ -4,50 +4,100 @@
 @{
     ViewData["Title"] = "Details";
 }
+<head>
+    <style>
+        /* Washing machine details */
 
-<h1>Details</h1>
+.washing-machine-details {
+  border: 1px solid #ccc;
+  padding: 16px;
+}
 
-<div>
-    <h4>WashingMachine</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.WashingMachine.MachineName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.WashingMachine.MachineName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.WashingMachine.Performmance)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.WashingMachine.Performmance)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.WashingMachine.Status)
-        </dt>
-        <dd class="col-sm-10">
-            @{
-                var status = Model.WashingMachine.Status;
-            }
-            @if(status == true)
-            {
-                @Html.Label("READY")
-            }
-            else
-            {
-                @Html.Label("RUNNING")
-            }
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.WashingMachine.Store)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.WashingMachine.Store.StoreName)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.WashingMachine?.MachineId">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
+.washing-machine-details dt {
+  font-weight: bold;
+}
+
+.washing-machine-details dd {
+  margin-bottom: 8px;
+}
+
+/* Status label */
+
+.status-label {
+  margin-top: 8px;
+}
+
+.status-label.ready {
+  color: green;
+}
+
+.status-label.running {
+  color: red;
+}
+
+/* Back to list and edit links */
+
+.back-to-list-and-edit-links {
+  margin-top: 16px;
+  text-align: right;
+}
+
+.back-to-list-and-edit-links a {
+  text-decoration: none;
+  color: #000;
+}
+
+.back-to-list-and-edit-links a:hover {
+  color: #ccc;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Details</h1>
+
+    <div class="washing-machine-details">
+        <h4>WashingMachine</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.WashingMachine.MachineName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.WashingMachine.MachineName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.WashingMachine.Performmance)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.WashingMachine.Performmance)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.WashingMachine.Status)
+            </dt>
+            <dd class="col-sm-10">
+                @{
+                    var status = Model.WashingMachine.Status;
+                }
+                @if (status == true)
+                {
+                    <p class="status-label ready">READY</p>
+                }
+                else
+                {
+                    <p class="status-label running">RUNNING</p>
+                }
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.WashingMachine.Store)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.WashingMachine.Store.StoreName)
+            </dd>
+        </dl>
+    </div>
+    <div class="back-to-list-and-edit-links">
+        <a asp-page="./Edit" asp-route-id="@Model.WashingMachine?.MachineId">Edit</a> |
+        <a asp-page="./Index">Back to List</a>
+    </div>
+</body>

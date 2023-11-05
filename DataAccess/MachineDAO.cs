@@ -40,6 +40,7 @@ namespace DataAccess
             {
                 var Dbcontext = new LaundryMiddlePlatformContext();
                 Dbcontext.WashingMachines.Add(washingMachine);
+                Dbcontext.SaveChanges();
                 check = true;
             }
             catch (Exception ex)

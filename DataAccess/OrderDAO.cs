@@ -144,5 +144,54 @@ namespace DataAccess
             }
             return FindOrder;
         }
+
+        public IList<Order> findAllOrderByStoreId(int storeId)
+        {
+            var dbContext = new LaundryMiddlePlatformContext();
+            return dbContext.Orders
+                    .Where(o => o.StoreId == storeId)
+                    .Include(o => o.Customer)
+                    .Include(o => o.OrderDetails)
+                    .Include(o => o.Store)
+                    .AsNoTracking()
+                    .ToList();
+        }
+
+        public IList<Order> findAllOrderByCustomerId(int customerId)
+        {
+            var dbContext = new LaundryMiddlePlatformContext();
+            return dbContext.Orders
+                    .Where(o => o.CustomerId == customerId)
+                    .Include(o => o.Customer)
+                    .Include(o => o.OrderDetails)
+                    .Include(o => o.Store)
+                    .AsNoTracking()
+                    .ToList();
+        }
+
+        public IList<Order> findAllOrderBetweenStartDateTimeAndStartEndTime(DateTime startDateTime, DateTime endDateTime)
+        {
+            var dbContext = new LaundryMiddlePlatformContext();
+            return dbContext.Orders
+                    .Where(o => DateTime.Compare(o.StartDateTime, startDateTime) >= 0 &&
+                                DateTime.Compare(o.FinishDateTime, endDateTime) <= 0)
+                    .Include(o => o.Customer)
+                    .Include(o => o.OrderDetails)
+                    .Include(o => o.Store)
+                    .ToList();
+        }
+
+        public IList<Order> findAllOrderBetweenStartDateTimeAndStartEndTimeAndCustomerId(DateTime startDateTime, DateTime endDateTime, int customerId)
+        {
+            var dbContext = new LaundryMiddlePlatformContext();
+            return dbContext.Orders
+                    .Where(o => DateTime.Compare(o.StartDateTime, startDateTime) >= 0 &&
+                                DateTime.Compare(o.FinishDateTime, endDateTime) <= 0 &&
+                                o.CustomerId == customerId)
+                    .Include(o => o.Customer)
+                    .Include(o => o.OrderDetails)
+                    .Include(o => o.Store)
+                    .ToList();
+        }
     }
 }
