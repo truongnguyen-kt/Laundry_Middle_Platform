@@ -1,5 +1,6 @@
 ﻿@page
 @using BusinessObjects.Models;
+@using DataAccess;
 @using LaundryMidlePlatform.Pages.SessionHelpers;
 @model LaundryMidlePlatform.Pages.Stores.IndexModel
 
@@ -37,6 +38,20 @@
 <p>
     <a class="btn btn-success text-white" asp-page="CreateStore"><i class="fas fa-random"></i>Tạo Mới Cửa Hàng</a>
 </p>
+
+<form method="post">
+    
+    <div class="input-group d-flex justify-content-end">
+        <div class="form-outline">
+            <input asp-for="@Model.StoreName" id="StoreName" name="StoreName" class="form-control" placeholder="Search Store" />
+            
+        </div>
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+</form>
+<br />
 <table  class="table table-striped">
     <thead>
         <tr>
@@ -53,6 +68,9 @@
                 @Html.DisplayNameFor(model => model.Store[0].Phone)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Store[0].WashingMachines)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Store[0].Status)
             </th>
             <th></th>
@@ -60,7 +78,8 @@
     </thead>
     <tbody>
 @foreach (var item in Model.Store) {
-        <tr>
+            
+            <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.StoreName)
             </td>
@@ -73,6 +92,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
+                <td style="text-align: center">
+                    <p>@item.WashingMachines.Count</p>
+                </td>
                 <td>
                     @if (item.Status == true)
                     {

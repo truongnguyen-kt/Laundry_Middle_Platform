@@ -19,6 +19,8 @@ namespace LaundryMidlePlatform.Pages.Users
 
         [BindProperty]
         public User User { get; set; }
+        [BindProperty]
+        public String Error { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -52,7 +54,12 @@ namespace LaundryMidlePlatform.Pages.Users
 
             if (User != null)
             {
-                _userRepository.DeleteUser(User.UserId);
+                var check = _userRepository.DeleteUser(User.UserId);
+                if (check == false)
+                {
+                    Error = "Customer has order is pending or processing, you can't delete !";
+                    return Page();
+                }
             }
 
             return RedirectToPage("./ViewAllUser");

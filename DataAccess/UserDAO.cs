@@ -33,15 +33,20 @@ namespace DataAccess
 
         public List<User?> GetAllUser()
         {
-            return _context.Users.ToList();
+            return _context.Users.Include(x => x.Orders).ToList();
         }
 
-        public void DeleteUser(int id)
+        public bool DeleteUser(int id)
         {
+            bool result = true;
             var user = _context.Users.Where(c => c.UserId == id).ToList()[0];
-            _context.Users.Remove(user);
-            _context.SaveChanges();
-
+            var orders = user.Orders.Where(c => c.OrderStatus.Contains("PENDING") || c.OrderStatus.Contains("PROCESSING")).ToList();
+            if(orders.Count == 0) {
+                _context.Users.Remove(user);
+                _context.SaveChanges();
+                return result;
+            }
+            return false;
         }
         public void AddUser(User user)
         {

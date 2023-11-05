@@ -30,7 +30,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/AdminHomePage/Stores/ViewAllStore">Store Management</a>
                         </li>
                         <li class="nav-item">
-                            <form method="post" asp-page-handler="LogOut" asp-page="/Index">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/AdminHomePage/Reports/Index">Report Sales</a>
+                        </li>
+                        <li class="nav-item">
+                            <form method="get" asp-page-handler="LogOut" asp-page="/Logout">
                                 <button type="submit">Log out</button>
                             </form>
                         </li>

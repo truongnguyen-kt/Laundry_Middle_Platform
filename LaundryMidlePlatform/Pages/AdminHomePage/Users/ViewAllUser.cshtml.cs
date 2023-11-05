@@ -20,6 +20,8 @@ namespace LaundryMidlePlatform.Pages.Users
 
         public string Email { get; private set; }
         public IList<User> User { get; set; } = default!;
+        [BindProperty]
+        public string SearchValue { get; set; }
 
         public int? RoleId { get; set; }
         public IActionResult OnGetAsync()
@@ -36,6 +38,16 @@ namespace LaundryMidlePlatform.Pages.Users
             }
 
             User = UserRepository.GetAllUsers();
+            foreach (var user in User)
+            {
+                foreach (var item in user.Orders)
+                {
+                    if (item.OrderStatus.Equals("COMPLETE") || item.OrderStatus.Equals("CANCEL"))
+                    {
+                        user.Orders.Remove(item);
+                    }
+                }
+            }
             return Page();
         }
 
@@ -43,6 +55,24 @@ namespace LaundryMidlePlatform.Pages.Users
         {
             HttpContext.Session.Remove("customerEmail");
             return RedirectToPage("/Index");
+        }
+
+        public IActionResult OnPostSearch()
+        {
+            if (string.IsNullOrEmpty(SearchValue))
+            {
+                User = UserRepository.GetAllUsers();
+                return Page();
+            }
+
+            var search = SearchValue.ToUpper().Trim();
+            User = UserRepository.GetAllUsers()
+                .Where(O => O.LastName.ToUpper().Trim().Contains(search)
+                            || O.LastName.ToUpper().Trim().Contains(search)
+                            || O.Phone.ToUpper().Trim().Contains(search)
+                            || O.Email.ToUpper().Trim().Contains(search)
+                ).ToList();
+            return Page();
         }
     }
 }

@@ -26,8 +26,11 @@ namespace LaundryMidlePlatform.Pages.CustomerHomePage
 
         private IStoreRepository storeRepository = new StoreRepository();
         public IList<Store> Store { get; set; } = default!;
+        [BindProperty]
+        public string StoreName { get; set; }
+        bool flag = true;
 
-        public void OnGet()
+        public IActionResult OnGetAsync()
         {
             string email = HttpContext.Session.GetString("customerEmail");
             if (!string.IsNullOrEmpty(email))
@@ -35,17 +38,21 @@ namespace LaundryMidlePlatform.Pages.CustomerHomePage
                 Email = email;
                 User = userRepository.findUserByEmail(Email);
             }
-            Store = storeRepository.GetAllStores();
+            if (flag)
+            {
+                Store = storeRepository.GetAllStores();
+            }
+            return Page();
         }
 
         [BindProperty]
         public string SelectedStoreId { get; set; } = default!;
 
-        //public IActionResult OnPost(int storeId) // Add storeId as a parameter
-        //{
-        //    // Use storeId here
-        //    // You can pass it to the next page if needed
-        //    //return RedirectToPage("/CustomerHomePage/OrderPage/CustomerMakeOrderDetail", new { storeId = SelectedStoreId });
-        //}
+        public IActionResult OnPostAsync()
+        {
+            Store = storeRepository.GetAllStores().Where(x => x.StoreName.ToUpper().Contains(StoreName.ToUpper())).ToList();
+            flag = false;
+            return OnGetAsync();
+        }
     }
 }
