@@ -4,47 +4,130 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<head>
+    <style>
+        /* Edit form */
 
-<h1>Edit</h1>
+        .edit-form {
+            border: 1px solid #ccc;
+            padding: 16px;
+        }
 
-<h4>WashingMachine</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="WashingMachine.MachineId" />
-            <div class="form-group">
-                <label asp-for="WashingMachine.MachineName" class="control-label"></label>
-                <input asp-for="WashingMachine.MachineName" class="form-control" />
-                <span asp-validation-for="WashingMachine.MachineName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="WashingMachine.Performmance" class="control-label"></label>
-                <input asp-for="WashingMachine.Performmance" class="form-control" />
-                <span asp-validation-for="WashingMachine.Performmance" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="WashingMachine.Status" class="control-label"></label>
-                <input asp-for="WashingMachine.Status" class="form-control" />
-                <span asp-validation-for="WashingMachine.Status" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="WashingMachine.StoreId" class="control-label"></label>
-                <input asp-for="WashingMachine.StoreId" class="form-control" readonly />
-                <span asp-validation-for="WashingMachine.StoreId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+            .edit-form label {
+                font-weight: bold;
+            }
+
+            .edit-form input,
+            .edit-form select {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                margin-bottom: 8px;
+            }
+
+                .edit-form input[type="submit"] {
+                    background-color: #000;
+                    color: #fff;
+                    border: none;
+                    cursor: pointer;
+                }
+
+                    .edit-form input[type="submit"]:hover {
+                        background-color: #ccc;
+                    }
+
+        /* Error and success messages */
+
+        .error-message,
+        .success-message {
+            text-align: center;
+            margin: 12px 0;
+        }
+
+        .error-message {
+            color: red;
+        }
+
+        .success-message {
+            color: green;
+        }
+
+        /* Back to list link */
+
+        .back-to-list {
+            margin-top: 16px;
+            text-align: right;
+        }
+
+            .back-to-list a {
+                text-decoration: none;
+                color: #000;
+            }
+
+                .back-to-list a:hover {
+                    color: #ccc;
+                }
+
+    </style>
+</head>
+<body>
+
+    <h1>Edit</h1>
+
+    <h4>WashingMachine</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="WashingMachine.MachineId" />
+                <div class="form-group">
+                    <label asp-for="WashingMachine.MachineName" class="control-label"></label>
+                    <input asp-for="WashingMachine.MachineName" class="form-control" />
+                    <span asp-validation-for="WashingMachine.MachineName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="WashingMachine.Performmance" class="control-label"></label>
+                    <input asp-for="WashingMachine.Performmance" class="form-control" />
+                    <span asp-validation-for="WashingMachine.Performmance" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="WashingMachine.Status" class="control-label"></label>
+                    <select asp-for="WashingMachine.Status" class="form-control">
+                        <option value="true">Ready</option>
+                        <option value="false">Running</option>
+                    </select>
+                    <span asp-validation-for="WashingMachine.Status" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="WashingMachine.StoreId" class="control-label"></label>
+                    <input asp-for="WashingMachine.StoreId" class="form-control" readonly />
+                    <span asp-validation-for="WashingMachine.StoreId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+            @if (!string.IsNullOrEmpty(Model.Error))
+            {
+                <p class="text-center" style="margin: 12px 0;">
+                    <span style="color:red;">Error: @Model.Error</span>
+                </p>
+            }
+            @if (!string.IsNullOrEmpty(Model.Success))
+            {
+                <p class="text-center" style="margin: 12px 0;">
+                    <span style="color:green;"> @Model.Success</span>
+                </p>
+            }
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
+    <div>
+        <a asp-page="./Index">Back to List</a>
+    </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</body>

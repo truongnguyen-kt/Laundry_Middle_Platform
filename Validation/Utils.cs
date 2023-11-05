@@ -87,5 +87,18 @@ namespace Validation
         {
             return input.Any(char.IsLetter);
         }
+
+        public DateTime convertDateTime(DateTime input)
+        {
+            int oldYear = input.Year;
+            int oldMonth = input.Month;
+            int oldDay = input.Day;
+            int oldHour = input.Hour;
+            int oldMinute = input.Minute;
+            int oldSecond = input.Second;
+            int oldMillisecond = input.Millisecond;
+
+            return new DateTime(oldYear, oldMonth, oldDay, oldHour, oldMinute, oldSecond, oldMillisecond);
+        }
     }
 }

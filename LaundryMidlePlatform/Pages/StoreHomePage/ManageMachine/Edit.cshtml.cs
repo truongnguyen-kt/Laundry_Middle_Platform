@@ -5,6 +5,8 @@ using BusinessObjects.Models;
 using Repository.Interface;
 using Repository.Implements;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
+using Validation;
 
 namespace LaundryMidlePlatform.Pages.StoreHomePage.ManageMachine
 {
@@ -13,9 +15,16 @@ namespace LaundryMidlePlatform.Pages.StoreHomePage.ManageMachine
         private readonly IMachineRepository machineRepository = new MachineRepository();
         private readonly IUserRepository userRepository = new UserRepository();
         private readonly IStoreRepository storeRepository = new StoreRepository();
-
+        private Utils validation = new Utils();
         [BindProperty]
         public WashingMachine WashingMachine { get; set; } = default!;
+
+        [BindProperty]
+        public string Error { get; set; }
+
+        [BindProperty]
+        public string Success { get; set; }
+
 
         public IActionResult OnGetAsync(int? id)
         {
@@ -81,16 +90,29 @@ namespace LaundryMidlePlatform.Pages.StoreHomePage.ManageMachine
                     }
                     else
                     {
-                        if (!ModelState.IsValid)
+                        if (string.IsNullOrEmpty(WashingMachine.MachineName))
                         {
+                            Error = "Machine Name can not be null or empty. Can not update Washing Machine";
+                            return Page();
+                        }
+                        if (string.IsNullOrEmpty(WashingMachine.Performmance.ToString()))
+                        {
+                            Error = "Machine Performance can not be null or empty. Can not update Washing Machine";
+                            return Page();
+                        }
+                        if (validation.CheckContainLetter(WashingMachine.Performmance.ToString()))
+                        {
+                            Error = "Machine Performance only can contain digits. Can not update Washing Machine";
+                            return Page();
+                        }
+                        if (string.IsNullOrEmpty(WashingMachine.Status.ToString()))
+                        {
+                            Error = "Machine Status can not be null or empty. Can not update Washing Machine";
                             return Page();
                         }
 
-                        //_context.Attach(WashingMachine).State = EntityState.Modified;
-
                         try
                         {
-                            //await _context.SaveChangesAsync();
                             machineRepository.UpdateWashingMachine(WashingMachine, WashingMachine.MachineId);
                         }
                         catch (DbUpdateConcurrencyException)

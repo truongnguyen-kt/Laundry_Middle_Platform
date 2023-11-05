@@ -4,7 +4,69 @@
 @{
     ViewData["Title"] = "Delete";
 }
+<head>
+    <style>
+        /* Delete confirmation page */
 
+        .delete-confirmation-page {
+            border: 1px solid #ccc;
+            padding: 16px;
+        }
+
+            .delete-confirmation-page h3 {
+                text-align: center;
+                margin-bottom: 16px;
+            }
+
+            .delete-confirmation-page dl {
+                margin-bottom: 16px;
+            }
+
+                .delete-confirmation-page dl dt {
+                    font-weight: bold;
+                }
+
+                .delete-confirmation-page dl dd {
+                    margin-bottom: 8px;
+                }
+
+            .delete-confirmation-page form {
+                text-align: center;
+            }
+
+                .delete-confirmation-page form input[type="submit"] {
+                    background-color: #f00;
+                    color: #fff;
+                    border: none;
+                    cursor: pointer;
+                    padding: 8px 16px;
+                }
+
+                    .delete-confirmation-page form input[type="submit"]:hover {
+                        background-color: #ccc;
+                    }
+
+                .delete-confirmation-page form a {
+                    text-decoration: none;
+                    color: #000;
+                    margin-left: 8px;
+                }
+
+                    .delete-confirmation-page form a:hover {
+                        color: #ccc;
+                    }
+
+        /* Error message */
+
+        .error-message {
+            text-align: center;
+            margin: 12px 0;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
 <h1>Delete</h1>
 
 <h3>Are you sure you want to delete this?</h3>
@@ -49,3 +111,4 @@
         <a asp-page="./Index">Back to List</a>
     </form>
 </div>
+</body>

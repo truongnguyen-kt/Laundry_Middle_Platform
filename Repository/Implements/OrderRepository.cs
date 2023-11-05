@@ -19,5 +19,14 @@ namespace Repository.Implements
         public bool createOrder(Order order) => OrderDAO.Instance.createOrder(order);
         public bool deleteOrder(int orderId) => OrderDAO.Instance.deleteOrder(orderId);
         public Order findOrderByBasedOnSpecificFields(Order order) => OrderDAO.Instance.findOrderByBasedOnSpecificFields(order);
+
+        public IList<Order> findAllOrderByStoreId(int storeId) => OrderDAO.Instance.findAllOrderByStoreId(storeId);
+        public IList<Order> findAllOrderByCustomerId(int customerId) => OrderDAO.Instance.findAllOrderByCustomerId(customerId);
+
+        public IList<Order> findAllOrderBetweenStartDateTimeAndStartEndTime(DateTime startDateTime, DateTime endDateTime) =>
+            OrderDAO.Instance.findAllOrderBetweenStartDateTimeAndStartEndTime(startDateTime, endDateTime);
+
+        public IList<Order> findAllOrderBetweenStartDateTimeAndStartEndTimeAndCustomerId(DateTime startDateTime, DateTime endDateTime, int customerId) =>
+             OrderDAO.Instance.findAllOrderBetweenStartDateTimeAndStartEndTimeAndCustomerId(startDateTime, endDateTime, customerId);
     }
 }

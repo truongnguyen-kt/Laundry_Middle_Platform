@@ -4,54 +4,137 @@
 @{
     ViewData["Title"] = "Index";
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LaundryMidlePlatform</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/LaundryMidlePlatform.styles.css" asp-append-version="true" />
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
 
-<h1>Index</h1>
+    h1 {
+        text-align: center;
+    }
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.WashingMachine[0].MachineName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WashingMachine[0].Performmance)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WashingMachine[0].Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WashingMachine[0].Store)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.WashingMachine) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.MachineName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Performmance)
-            </td>
-            <td>
-               @{
-                    string statusText = (item.Status == true) ? "READY" : "RUNNING";
-               }
-                @Html.DisplayFor(modelItem => statusText)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Store.Address)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.MachineId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.MachineId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.MachineId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    header {
+        background-color: #fff;
+        padding: 10px 0;
+    }
+
+    .navbar-brand {
+        font-size: 24px;
+    }
+
+    .navbar-nav {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-item {
+        margin-right: 10px;
+    }
+
+    .table {
+        margin-top: 20px;
+    }
+
+    .table th {
+        background-color: #333;
+        color: #fff;
+    }
+
+    .table td {
+        background-color: #f9f9f9;
+    }
+
+    .table a {
+        text-decoration: none;
+        margin-right: 10px;
+    }
+</style>
+
+</head>
+<body>
+    <h1>Index</h1>
+
+    <p>
+        <a asp-page="Create">Create New</a>
+    </p>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" a href="/CustomerHomePage/CustomerHomePage">LaundryMidlePlatform</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/StoreHomePage/ManageOrder/Index">Customer Management</a>
+                        </li>
+                        @* <li class="nav-item">
+                        <a class="nav-link text-dark" href="/CustomerHomePage/updateProfileCustomer">Update Profile Customer</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-dark" href="/CustomerHomePage/viewOrderHistoryCustomer">View Order History Customer</a>
+                        </li> *@
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.WashingMachine[0].MachineName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WashingMachine[0].Performmance)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WashingMachine[0].Status)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WashingMachine[0].Store)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model.WashingMachine) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MachineName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Performmance)
+                </td>
+                <td>
+                   @{
+                        string statusText = (item.Status == true) ? "READY" : "RUNNING";
+                   }
+                    @Html.DisplayFor(modelItem => statusText)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Store.Address)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.MachineId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.MachineId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.MachineId">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</body>

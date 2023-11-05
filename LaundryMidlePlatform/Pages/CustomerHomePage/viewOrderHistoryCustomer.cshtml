@@ -15,6 +15,105 @@
     }
 }
 <h2>View Order Transactions</h2>
+<div class="row justify-content-center">
+   <form method="post" class="col-md-6">
+        <div class="form-group row" style="margin-bottom: 15px;">
+            <div class="col">
+                <label asp-for="StartDateTime" class="control-label"></label>
+            </div>
+            <div class="col">
+                <input asp-for="StartDateTime" type="datetime-local" class="form-control" />
+                <span asp-validation-for="StartDateTime" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row" style="margin-bottom: 15px;">
+            <div class="col">
+                <label asp-for="EndDateTime" class="control-label"></label>
+            </div>
+            <div class="col">
+                <input asp-for="EndDateTime" type="datetime-local" class="form-control" />
+                <span asp-validation-for="EndDateTime" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row" style="margin-bottom: 15px;">
+            <div class="col text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+        <input type = "hidden" value = "Model.Email"/> 
+    </form>
+</div>
+@if (!string.IsNullOrEmpty(Model.Error))
+{
+    <p class="text-center" style="margin: 12px 0;">
+        <span style="color:red;">Error: @Model.Error</span>
+    </p>
+}
+@if (!string.IsNullOrEmpty(Model.Success))
+{
+    <p class="text-center" style="margin: 12px 0;">
+        <span style="color:green;"> @Model.Success</span>
+    </p>
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Customer.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Customer.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].StartDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].FinishDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].TotalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].OrderStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Store)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Order)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FinishDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Store.StoreName)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
 <div class="text-center" style="margin-top: 15px;">
     <a asp-page="/CustomerHomePage/CustomerHomePage" asp-route-email="@Model.Email" style="font-size: 16px;">Back to Customer Home Page</a>
 </div>
