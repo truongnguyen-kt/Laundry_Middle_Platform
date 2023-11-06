@@ -220,7 +220,7 @@ namespace Repository.Implements
             }
         }
 
-        public void OrderLaundry(OrderInvoice orderInvoice)
+        /*public void OrderLaundry(OrderInvoice orderInvoice)
         {
             Order order = orderRepository.findOrderById(orderInvoice.orderId);
             Store store = storeRepository.GetStoreById(orderInvoice.storeId);
@@ -233,6 +233,29 @@ namespace Repository.Implements
                 {
                     WashingMachine washingMachine = machineRepository.GetWashingMachineById(machineID[i]);
                     if(washingMachine != null)
+                    {
+                        washingMachine.Status = false;
+                        machineRepository.UpdateWashingMachine(washingMachine, machineID[i]);
+                    }
+                }
+            }
+        }*/
+
+        public void OrderLaundry(OrderInvoice orderInvoice)
+        {
+            Order order = orderRepository.findOrderById(orderInvoice.orderId);
+            Store store = storeRepository.GetStoreById(orderInvoice.storeId);
+            List<int> machineID = orderInvoice.machineID;
+            if (order != null && store != null)
+            {
+                order.StartDateTime = orderInvoice.startDateTime;
+                order.FinishDateTime = orderInvoice.finishDateTime;
+                order.OrderStatus = "PROCESSING";
+                orderRepository.updateOrder(order, orderInvoice.orderId);
+                for (int i = 0; i < machineID.Count; i++)
+                {
+                    WashingMachine washingMachine = machineRepository.GetWashingMachineById(machineID[i]);
+                    if (washingMachine != null)
                     {
                         washingMachine.Status = false;
                         machineRepository.UpdateWashingMachine(washingMachine, machineID[i]);

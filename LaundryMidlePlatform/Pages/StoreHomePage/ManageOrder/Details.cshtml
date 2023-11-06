@@ -1,8 +1,20 @@
 ﻿@page
+@using BusinessObjects.Models;
+@using LaundryMidlePlatform.Pages.SessionHelpers;
 @model LaundryMidlePlatform.Pages.StoreHomePage.ManageOrder.DetailsModel
 
 @{
     ViewData["Title"] = "Details";
+}
+@{
+    ViewData["Title"] = "Store";
+    var store = SessionHelper.GetObjectFromJson<User>(HttpContext.Session, "store");
+
+    if (store == null)
+    {
+        Layout = "Shared/_AdminError";
+        return;
+    }
 }
 <head>
     <style>
