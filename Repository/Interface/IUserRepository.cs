@@ -11,7 +11,7 @@ namespace Repository.Interface
     {
         public void UpdateUser(User user);
 
-        public void DeleteUser(int userId);
+        public bool DeleteUser(int userId);
 
 
         public List<User?> GetAllUsers();

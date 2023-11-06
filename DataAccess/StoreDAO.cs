@@ -78,10 +78,17 @@ namespace DataAccess
                 Store store = GetStoreById(storeId);
                 if (store != null)
                 {
-                    var Dbcontext = new LaundryMiddlePlatformContext();
-                    Dbcontext.Stores.Remove(store);
-                    Dbcontext.SaveChanges();
-                    check = true;
+                    MachineDAO machineDAO = new MachineDAO();
+                    var machineIsRunning = machineDAO.GetWashingMachinesByStoreId(storeId).Where(x => x.Status == false).ToList();
+                    if(machineIsRunning.Count == 0)
+                    {
+                        store.Status = false;
+                        var Dbcontext = new LaundryMiddlePlatformContext();
+
+                        Dbcontext.Stores.Update(store);
+                        Dbcontext.SaveChanges();
+                        check = true;
+                    }
                 }
             }
             catch (Exception ex)

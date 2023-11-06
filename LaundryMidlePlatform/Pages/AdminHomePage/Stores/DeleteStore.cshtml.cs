@@ -21,6 +21,8 @@ namespace LaundryMidlePlatform.Pages.Stores
 
         [BindProperty]
         public Store Store { get; set; }
+        [BindProperty]
+        public string Error { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -48,7 +50,12 @@ namespace LaundryMidlePlatform.Pages.Stores
 
             if (Store != null)
             {
-                _storeRepository.DeleteStore(Store.StoreId);
+                var check = _storeRepository.DeleteStore(Store.StoreId);
+                if(check == false)
+                {
+                    Error = "Store has machine is running, you can't delete !";
+                    return Page();
+                }
             }
 
             return RedirectToPage("./ViewAllStore");

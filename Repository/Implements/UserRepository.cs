@@ -16,9 +16,9 @@ namespace Repository.Implements
             UserDAO.Instance.AddUser(newCustomer);
         }
 
-        public void DeleteUser(int userId)
+        public bool DeleteUser(int userId)
         {
-            UserDAO.Instance.DeleteUser(userId);
+            return UserDAO.Instance.DeleteUser(userId);
         }
 
         public List<User?> GetAllUsers()

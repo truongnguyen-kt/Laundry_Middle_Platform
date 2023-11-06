@@ -1,0 +1,92 @@
+﻿@page
+@using BusinessObjects.Models;
+@using LaundryMidlePlatform.Pages.SessionHelpers;
+@model LaundryMidlePlatform.Pages.AdminHomePage.Reports.IndexModel
+@{
+    Layout = "Shared/_AdminLayout";
+    ViewData["Title"] = "Index";
+}
+@{
+    ViewData["Title"] = "Admin";
+    var admin = SessionHelper.GetObjectFromJson<User>(HttpContext.Session, "admin");
+
+    if (admin == null)
+    {
+        Layout = "Shared/_AdminError";
+        return;
+
+    }
+}
+
+<h1>Report</h1>
+
+<form method="post" asp-page="index" asp-page-handler="search">
+    <label class="control-label">START DAY</label>
+    @{
+        DateTime defaultDate = DateTime.Today;
+        DateTime currentDate = DateTime.Today;
+    }
+    <input asp-for="@Model.startDay" class="form-control" type="date" max="@currentDate.ToString("yyyy-MM-dd")" value="@defaultDate.ToString("yyyy-MM-dd")" />
+    <span asp-validation-for="startDay" class="text-danger"></span>
+
+    <hr />
+    <label class="control-label">END DAY</label>
+    <input asp-for="@Model.endDay" class="form-control" type="date" value="@defaultDate.ToString("yyyy-MM-dd")" />
+    <span asp-validation-for="endDay" class="text-danger"></span>
+    <hr />
+    <button type="submit" value="Search" class="btn btn-primary" style="margin: 0 auto">Search</button>
+</form>
+<br />
+<h5 style="color: green"> Total Price from @Model.startDay to @Model.endDay: @Model.Total </h5>
+<br />
+<h5 style ="color: green">Total Order: @Model.Orders.Count</h5>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].StartDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].FinishDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].TotalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].OrderStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orders[0].Store)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Orders)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FinishDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Store.StoreName)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

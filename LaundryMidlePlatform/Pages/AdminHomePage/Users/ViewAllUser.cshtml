@@ -30,6 +30,13 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 
 </head>
+<form method="post" asp-page=ViewAllUser asp-page-handler="search">
+    <div class="form-group">
+        <label for="searchString">Search:</label>
+        <input asp-for="SearchValue" class="form-control" />
+    </div>
+    <button type="submit" value="Search" class="btn btn-primary" style="margin: 0 auto">Search</button>
+</form>
 <body>
 
     <div class="container">
@@ -50,6 +57,7 @@
                     <th>@Html.DisplayNameFor(model => model.User[0].Gender)</th>
                     <th>@Html.DisplayNameFor(model => model.User[0].Address)</th>
                     <th>@Html.DisplayNameFor(model => model.User[0].DateOfBirth)</th>
+                    <th>@Html.DisplayNameFor(model => model.User[0].Orders)</th>
                     <th>@Html.DisplayNameFor(model => model.User[0].Role)</th>
                     <th></th>
                 </tr>
@@ -75,6 +83,7 @@
                         </td>
                         <td>@Html.DisplayFor(modelItem => item.Address)</td>
                         <td>@Html.DisplayFor(modelItem => item.DateOfBirth)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Orders.Count)</td>
                         <td>
                             @if (item.RoleId == 1)
                             {
@@ -83,7 +92,11 @@
                             else if (item.RoleId == 2)
                             {
                                 <text>Guest</text>
+                            }else if (item.RoleId == 3)
+                            {
+                                <text>Store</text>
                             }
+
                         </td>
                         <td>
                             <a class="btn btn-info" asp-page="./Edit" asp-route-id="@item.UserId">Sửa</a>
