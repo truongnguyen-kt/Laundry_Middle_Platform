@@ -1,8 +1,21 @@
 ﻿@page
+@using BusinessObjects.Models;
+@using LaundryMidlePlatform.Pages.SessionHelpers;
 @model LaundryMidlePlatform.Pages.StoreHomePage.ManageMachine.IndexModel
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "Shared/_LayoutStore";
+}
+@{
+    ViewData["Title"] = "Store";
+    var store = SessionHelper.GetObjectFromJson<User>(HttpContext.Session, "store");
+
+    if (store == null)
+    {
+        Layout = "Shared/_AdminError";
+        return;
+    }
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +26,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/LaundryMidlePlatform.styles.css" asp-append-version="true" />
+    </head>
     <style>
     body {
         font-family: Arial, sans-serif;
@@ -23,10 +37,6 @@
         text-align: center;
     }
 
-    header {
-        background-color: #fff;
-        padding: 10px 0;
-    }
 
     .navbar-brand {
         font-size: 24px;
@@ -60,38 +70,11 @@
         margin-right: 10px;
     }
 </style>
-
-</head>
 <body>
-    <h1>Index</h1>
-
+    <h1 class="text-center" style="margin-top: 20px"> <i class="fas fa-comment-dollar text-succes"></i> LauchDry Shop </h1>
     <p>
-        <a asp-page="Create">Create New</a>
+        <a class="btn btn-dark text-white" asp-page="Create"><i class="fas fa-random"></i>Create New Machine</a>
     </p>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" a href="/CustomerHomePage/CustomerHomePage">LaundryMidlePlatform</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/StoreHomePage/ManageOrder/Index">Customer Management</a>
-                        </li>
-                        @* <li class="nav-item">
-                        <a class="nav-link text-dark" href="/CustomerHomePage/updateProfileCustomer">Update Profile Customer</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link text-dark" href="/CustomerHomePage/viewOrderHistoryCustomer">View Order History Customer</a>
-                        </li> *@
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
     <table class="table">
         <thead>
             <tr>

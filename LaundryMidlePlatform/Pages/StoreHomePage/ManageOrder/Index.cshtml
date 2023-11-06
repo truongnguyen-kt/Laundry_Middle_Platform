@@ -1,8 +1,21 @@
 ﻿@page
+@using BusinessObjects.Models;
+@using LaundryMidlePlatform.Pages.SessionHelpers;
 @model LaundryMidlePlatform.Pages.StoreHomePage.ManageOrder.IndexModel
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "Shared/_LayoutStore";
+}
+@{
+    ViewData["Title"] = "Store";
+    var store = SessionHelper.GetObjectFromJson<User>(HttpContext.Session, "store");
+
+    if (store == null)
+    {
+        Layout = "Shared/_AdminError";
+        return;
+    }
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -16,95 +29,79 @@
 
     <style>
         body {
-  font-family: sans-serif;
-}
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+        }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-th, td {
-  border: 1px solid black;
-  padding: 8px;
-}
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
 
-tr:nth-child(even) {
-  background-color: #eee;
-}
+        tr:nth-child(even) {
+            background-color: #eee;
+        }
 
-.navbar {
-  background-color: #f5f5f5;
-  border-bottom: 1px solid #ccc;
-}
+        .navbar {
+            background-color: #f5f5f5;
+            border-bottom: 1px solid #ccc;
+        }
 
-.navbar-brand {
-  color: #000;
-}
+        .navbar-brand {
+            color: #000;
+        }
 
-.nav-link {
-  color: #000;
-  text-decoration: none;
-}
+        .nav-link {
+            color: #000;
+            text-decoration: none;
+        }
 
-.nav-link:hover {
-  color: #fff;
-  background-color: #ccc;
-}
+            .nav-link:hover {
+                color: #fff;
+                background-color: #ccc;
+            }
 
     </style>
 </head>
 <body>
-    <h1>Index</h1>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" a href="/CustomerHomePage/CustomerHomePage">LaundryMidlePlatform</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/StoreHomePage/ManageMachine/Index">Manage Machine</a>
-                        </li>
-                    </ul>
+    <h1 class="text-center">Order Management</h1>
+
+    @* <p>
+    <a class="btn btn-success text-white" asp-page="CreateStore"><i class="fas fa-random"></i>Tạo Mới Cửa Hàng</a>
+    </p>*@
+    <div class="row justify-content-center">
+        <form method="post" class="col-md-6">
+            <div class="form-group row" style="margin-bottom: 15px;">
+                <div class="col">
+                    <label asp-for="StartDateTime" class="control-label text-center"></label>
+                </div>
+                <div class="col">
+                    <input asp-for="StartDateTime" type="datetime-local" class="form-control" />
+                    <span asp-validation-for="StartDateTime" class="text-danger"></span>
                 </div>
             </div>
-        </nav>
-    </header>
-    <p>
-        <a asp-page="Create">Create New</a>
-    </p>
-    <div class="row justify-content-center">
-    <form method="post" class="col-md-6">
-    <div class="form-group row" style="margin-bottom: 15px;">
-        <div class="col">
-            <label asp-for="StartDateTime" class="control-label"></label>
-        </div>
-        <div class="col">
-            <input asp-for="StartDateTime" type="datetime-local" class="form-control" />
-            <span asp-validation-for="StartDateTime" class="text-danger"></span>
-        </div>
-    </div>
-    <div class="form-group row" style="margin-bottom: 15px;">
-        <div class="col">
-            <label asp-for="EndDateTime" class="control-label"></label>
-        </div>
-        <div class="col">
-            <input asp-for="EndDateTime" type="datetime-local" class="form-control" />
-            <span asp-validation-for="EndDateTime" class="text-danger"></span>
-        </div>
-    </div>
-    <div class="form-group row" style="margin-bottom: 15px;">
-        <div class="col text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </div>
-</form>
+            <div class="form-group row" style="margin-bottom: 15px;">
+                <div class="col">
+                    <label asp-for="EndDateTime" class="control-label text-center"></label>
+                </div>
+                <div class="col">
+                    <input asp-for="EndDateTime" type="datetime-local" class="form-control" />
+                    <span asp-validation-for="EndDateTime" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row" style="margin-bottom: 15px;">
+                <div class="col text-center">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+        </form>
 
-</div>
+    </div>
 
     <table class="table">
         <thead>
@@ -133,44 +130,45 @@ tr:nth-child(even) {
             </tr>
         </thead>
         <tbody>
-    @foreach (var item in Model.Order) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Customer.FirstName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Customer.LastName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StartDateTime)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FinishDateTime)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TotalPrice)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OrderStatus)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Store.StoreName)
-                </td>
-            </tr>
-    }
+            @foreach (var item in Model.Order)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartDateTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FinishDateTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Store.StoreName)
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
-   @if (!string.IsNullOrEmpty(Model.Error))
-        {
-            <p class="text-center" style="margin: 12px 0;">
-                <span style="color:red;">Error: @Model.Error</span>
-            </p>
-        }
-        @if (!string.IsNullOrEmpty(Model.Success))
-        {
-            <p class="text-center" style="margin: 12px 0;">
-                <span style="color:green;"> @Model.Success</span>
-            </p>
-        }
+    @if (!string.IsNullOrEmpty(Model.Error))
+    {
+        <p class="text-center" style="margin: 12px 0;">
+            <span style="color:red;">Error: @Model.Error</span>
+        </p>
+    }
+    @if (!string.IsNullOrEmpty(Model.Success))
+    {
+        <p class="text-center" style="margin: 12px 0;">
+            <span style="color:green;"> @Model.Success</span>
+        </p>
+    }
 </body>
 </html>
